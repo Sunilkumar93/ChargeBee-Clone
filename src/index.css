@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: white ;
-  color: black;
+  /* background-color: white ;
+  color: black; */
 }
 body {
   margin: 0;
@@ -20,6 +20,10 @@ code {
 }
 .o{
   background-color: #ff7846;
+}
+.b{
+  color: blue;
+  background-color: red;
 }
 link:hover{
 cursor: pointer;
