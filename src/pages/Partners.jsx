@@ -2,6 +2,7 @@ import React from 'react';
 import { Box,Text,Input,Button, GridItem,Grid,FormControl,FormLabel } from '@chakra-ui/react'
 const Partners = () => {
   return (
+
 <Box>
     <Box 
      style={{
@@ -102,6 +103,7 @@ const Partners = () => {
        
     </Box>
     
+
   )
 }
 
