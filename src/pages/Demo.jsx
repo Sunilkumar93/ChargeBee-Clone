@@ -1,13 +1,12 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 
-const Price = () => {
+const Demo = () => {
   return (
     <Box pt="100px" >
-      <h1>parag price</h1>
-      
+        <h1>Demo</h1>
     </Box>
   )
 }
 
-export default Price
+export default Demo
