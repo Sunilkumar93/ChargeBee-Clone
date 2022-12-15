@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AllRoutes from "./pages/AllRoutes";
+// import Customers from "./pages/Customers";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       
       <AllRoutes  />
       <Footer />
+      {/* <Customers/> */}
       
     </div>
   );
