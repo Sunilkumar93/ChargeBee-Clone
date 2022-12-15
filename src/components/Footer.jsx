@@ -10,24 +10,23 @@ import {
   Tag,
   Image,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const Logo = (props) => {
-  return (
-    <svg
-      height={32}
-      viewBox="0 0 120 28"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
+// const Logo = (props) => {
+//   return (
+//     <svg
+//       height={32}
+//       viewBox="0 0 120 28"
+//       xmlns="http://www.w3.org/2000/svg"
+//       {...props}>
       
-    </svg>
-  );
-};
+//     </svg>
+//   );
+// };
 
 const ListHeader = ({ children }) => {
   return (
