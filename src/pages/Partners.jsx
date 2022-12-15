@@ -322,7 +322,7 @@ one shared goal.</Text>
     </Box>
     
     </Box>
-
+    </Box>
   )
 }
 
