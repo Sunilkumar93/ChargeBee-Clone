@@ -15,7 +15,7 @@ const Login = () => {
                 <Box w="50%"><Image w="90%" src="https://d190vb4jo83j4z.cloudfront.net/Login_Page_Banner_Aug_22.png" alt="login_logo"/></Box>
                 
                 <Box w="50%"><Text color="gray">Chargebee's Summer 2022 Release brings you better monetization capabilities that help you seize revenue opportunities by improving customer lifetime value, managing cashflows better, and achieving topline growth.</Text>
-                <Link mt="10px" to="#" >See what's new across our products -></Link>
+                <Link mt="10px" to="#" >See what's new across our products</Link>
                 </Box>
               </Box>
           </Box>
