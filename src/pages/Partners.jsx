@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Partners.css'
 import {Link, Box,Text,Input,Button, GridItem,Grid,FormControl,FormLabel,Image,SimpleGrid } from '@chakra-ui/react'
 
@@ -27,6 +28,7 @@ function Card({src}){
 const Partners = () => {
   return (
 <Box mt='80px' border='1px  solid red'>
+
     <Box 
      style={{
       width:"100%",
@@ -36,13 +38,23 @@ const Partners = () => {
       alignItems:'center',
       gap:'40px',
       backgroundColor:"#651Aba",
-      }}
- >
-         <Text bg="#651Aba"  color='white' fontSize={{ base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Become a Partner</Text>
-         <Text bg="#651Aba"  color='white' fontSize={{ base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Partner FAQ</Text>
-        <Text bg="#651Aba"  color='white' fontSize={{base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Market Place</Text>
+
+      color:'white'
+  }}
+
+    >
+       <Box> <Text fontSize={{ base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Become a Partner</Text></Box>
+       <Box> <Text fontSize={{ base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Partner FAQ</Text></Box>
+       <Box> <Text fontSize={{base: '1xl', md: '2xl', lg: '3xl' }} as='b'>Market Place</Text></Box>
  </Box>
- 
+ <Box  style={{
+    width:"100%",
+     backgroundColor:"#4300a3",
+  
+    }}  
+    height="auto">
+   
+
  <Grid 
      templateRows={{
       sm: "repeat(1, 1fr)",
@@ -57,11 +69,11 @@ const Partners = () => {
     }}
     gap='50px'
     padding={{ base: '20px', md: '20px', lg: '60px' }}
-    // backgroundColor="#4300a3"
-    className='firstDiv'
+
     >
     
-         <GridItem   padding={{ base: '5px', md: '5px', lg: '36px' }} width={{ base: '100%', md: '100%', lg: '85%' }} mt='50px' color= "#ffffff">
+         <GridItem padding={{ base: '5px', md: '5px', lg: '36px' }} width={{ base: '100%', md: '100%', lg: '85%' }} mt='50px' color= "#ffffff">
+
               <Box  w='max-content' style={{ borderRadius: '20px',mb: "1cm",backgroundColor:" #522ec4"}}>
               <Text pl="14px" pr="14px" mb='12px' style={{ color: "#ffffff",border:'none'}}>Chargebee Partner Programs</Text>
               </Box>
@@ -116,6 +128,7 @@ const Partners = () => {
             <Text fontSize='12px' align='left'>Once you fill out this information, our Partnership team will get back to you shortly.</Text>
        </GridItem>
        </Grid>
+
      
         
            {/* PART-2  Technology Alliance Partner */}
@@ -309,6 +322,7 @@ one shared goal.</Text>
     </Box>
     
     </Box>
+
   )
 }
 

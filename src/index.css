@@ -21,6 +21,11 @@ code {
 .o{
   background-color: #ff7846;
 }
+.b{
+  color: blue;
+  background-color: red;
+}
 link:hover{
 cursor: pointer;
 }
+
