@@ -1,12 +1,13 @@
-import { Box } from '@chakra-ui/react'
-import React from 'react'
+import { Container } from "@chakra-ui/react";
+import React from "react";
+import HomeSlider from "../components/home/HomeSlider";
 
 const Home = () => {
   return (
-    <Box pt="100px" >
-      <h1>Home</h1>
-    </Box>
-  )
-}
+    <Container pt="120px" px="0" maxW={{ base: "95%", md: "90%", lg: "95%" }}>
+      <HomeSlider />
+    </Container>
+  );
+};
 
-export default Home
+export default Home;
