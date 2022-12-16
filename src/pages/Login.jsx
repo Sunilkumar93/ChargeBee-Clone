@@ -1,10 +1,51 @@
-import { Box, Button, Flex, Grid, Heading, Hide, Image, Input, InputGroup, InputRightElement, Show, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Flex, Grid, Image, Input, InputGroup, InputRightElement, Show, Text } from '@chakra-ui/react'
+import React, { useState } from 'react'
 import GoogleIcon from '@mui/icons-material/Google';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from '../firebase';
+import { useDispatch } from "react-redux";
+
+import { login } from '../Redux/auth/auth.action';
 
 
 const Login = () => {
+  const dispatch = useDispatch()
+
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const auth = getAuth(app);
+  const navigate = useNavigate()
+
+  const loginFirebase = (e) => {
+        e.preventDefault()
+        signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user.uid)
+   
+    alert("user signed in Successfully")
+    dispatch(login(user.uid))
+
+      navigate("/")
+    
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    // const errorMessage = error.message;
+    alert(errorCode)
+    navigate("/signup")
+    
+  });
+  }
+
+
+
+
+
+
   const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
   return (
@@ -29,13 +70,14 @@ const Login = () => {
 
           <Box  m="40px 40px 40px 20px" className='login_right' >
             <Text>Sign in to Chargebee!</Text>
-            <form >
-              <Input placeholder='name@company.com' size='md' mt="10px" />
+            <form onSubmit={loginFirebase} >
+              <Input onChange={(e)=> setEmail(e.target.value)} placeholder='name@company.com' size='md' mt="10px" />
               <InputGroup size='md' mt="20px">
               <Input
                 pr='4.5rem'
                 type={show ? 'text' : 'password'}
                 placeholder='password'
+                onChange={(e)=> setPassword(e.target.value)}
               />
               <InputRightElement width='4.5rem'>
                 <Text h='1.75rem' size='md' onClick={handleClick}>

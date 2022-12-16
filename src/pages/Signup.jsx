@@ -1,8 +1,40 @@
-import { PhoneIcon } from '@chakra-ui/icons'
-import { Box, Button, Flex, Grid, Heading, Hide, Image, Input, InputGroup, InputLeftAddon, InputLeftElement, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box,  Flex, Grid, Heading, Hide, Image, Input,  Text } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import app from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const auth = getAuth(app);
+  const navigate = useNavigate()
+
+ const signUpFirebase = (e) => {
+       e.preventDefault()
+       createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    alert("signup successfully ")
+    navigate("/login")
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    // const errorMessage = error.message;
+    alert(errorCode)
+   
+  });
+ }
+
+
+
+
+
+
   return (
     <Box pt="80px"   color="black">
        <Grid gridTemplateColumns={{base:"1fr",md:"1fr",lg:"1fr 2fr"}} >
@@ -27,22 +59,22 @@ const Signup = () => {
           
             <fieldset style={{border:"1px solid gray",paddingLeft:"20px",margin:"10%",borderRadius:"10px",padding:"5%"}}>
               <legend style={{fontSize:"24px"}}>Create Your Sandbox Account</legend>
-              <form>
+              <form onSubmit={signUpFirebase} >
               <Box  h="100%">
                 <label style={{fontSize:"20px"}}> Work email </label>
-                <Input mt="10px" mb="20px" borderColor="gray.400" colorScheme="gray" placeholder='parag@company.com' size='lg' />
+                <Input mt="10px" mb="20px" borderColor="gray.400" colorScheme="gray" placeholder='parag@company.com' size='lg'  onChange={(e)=> setEmail(e.target.value)} />
 
-                <label  style={{fontSize:"20px"}}> Phone number </label>
+                {/* <label  style={{fontSize:"20px"}}> Phone number </label>
                 <InputGroup >
                 <InputLeftElement
                   pointerEvents='none'
                   children={<PhoneIcon color='gray.300' />}
                 />
                 <Input mt="10px" mb="20px" borderColor="gray.400" size="lg" type='tel' placeholder='Phone number' />
-  </InputGroup>
+                </InputGroup> */}
 
                 <label  style={{fontSize:"20px"}}>  Password </label>
-                <Input mt="10px" mb="20px" borderColor="gray.400" placeholder='password...' size='lg' />
+                <Input mt="10px" mb="20px" borderColor="gray.400" placeholder='password...' size='lg'  onChange={(e)=> setPassword(e.target.value)} />
                 
                 <Flex gap="6px" mb="20px">
                 <input type="checkbox" borderColor="gray.400"  />
