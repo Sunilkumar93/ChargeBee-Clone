@@ -54,6 +54,7 @@ const Signup = () => {
               </Box>
               </form>
 
+
               <Box>
             <Text mb="20px" size="14px" >By clicking on Complete Signup, you agree to our Terms and you acknowledge having read our Privacy Notice</Text>
             <Text size="10px" >*This includes periodic newsletters, emails about usage tips, billing practices, and other communications. You can opt out anytime within the app.</Text>
