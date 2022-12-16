@@ -13,7 +13,7 @@ const ReadtheStory = () => {
              </div>
              <div  class="readstory1-right"  >
                 <div style={{position:"relative",top:"50px"}} >
-                <img width="200" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",padding:"20px 15px",borderRadius:"5px",position:"relative",left:"-180px",zIndex:"1"}} src="https://images.ctfassets.net/a7hvy8sclsq6/2Fi8riH5IgVX4alX01PxSx/01133d776df40d330b7765f632b30e4e/Whiteboard_CRM-logo.png" alt='whiteboard-logo' />
+                <img width="200" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",padding:"20px 15px",borderRadius:"5px",position:"relative",left:"-180px",zIndex:10,background:"white"}} src="https://images.ctfassets.net/a7hvy8sclsq6/2Fi8riH5IgVX4alX01PxSx/01133d776df40d330b7765f632b30e4e/Whiteboard_CRM-logo.png" alt='whiteboard-logo' />
                 <Heading>
                 How Whiteboard reduced Churn by 100% using Chargebee
                 </Heading>
@@ -114,7 +114,7 @@ const ReadtheStory = () => {
         </div>
         <div class="readstory5" style={{display:"flex",padding:"100px 180px"}} >
                  <div>
-                  <img src="" />
+                  {/* <img src="" /> */}
                  </div>
         </div>
     </div>

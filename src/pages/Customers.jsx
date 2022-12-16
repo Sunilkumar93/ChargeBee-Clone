@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-
+import  './Customers.css';
 const Customers = () => {
   const[list,setList] = useState([]);
   const getData = async()=>{
@@ -18,7 +18,7 @@ const Customers = () => {
   return (
     <div style={{}} >
       
-      <div class="cust1"style={{backgroundColor:"lightgray",padding:" 120px 100px"}} >
+      <div class="cust1">
       <Heading>Chargebee powers <br/>
       </Heading>
       <Heading> subscriptions for</Heading>
@@ -29,34 +29,34 @@ const Customers = () => {
   <Button  color="blue.500" variant='ghost'  marginTop="50px" marginLeft="20px"  >Talk to us!</Button>
 
       </div>
-      <div class="cust2" style={{display:"flex",padding:"60px 100px"}} >
-        <div>
-          <img style={{transform:"scale(0.6)",position:"left"}} src="https://webstatic.chargebee.com/assets/web/543/images/home/testimonial/cb-study.png" alt="study.com" />
-          <Text fontSize='25px' paddingLeft="80px" >... Integration was easy and the <strong style={{fontStyle:"italic"}} >customer<br/>support provided was excellent. </strong> This is huge<br/>considering how deficient many players in the <br/> space are when... </Text>
+      <div class="cust2" >
+        <div class="cust-left" > 
+          <img class="study-com-logo"  src="https://webstatic.chargebee.com/assets/web/543/images/home/testimonial/cb-study.png" alt="study.com" />
+          <p class='study-com-text'  >... Integration was easy and the <strong style={{fontStyle:"italic"}} >customer support provided was excellent. </strong> This is huge<br/>considering how deficient many players in the <br/> space are when... </p>
          <div style={{display:"flex",margin:"50px",alignItems:"center",justifyContent:"space-around"}} >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/voitek.jpeg" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",}} />  <label> Voitek Sobieszczanski, Director of Finance &amp; Operations</label>
          </div>
           
         </div>
         <div>
-      <Link to="/customers/readthestory" >  <img style={{transform:"scale(0.8)",position:"absolute",top:"100px"}} src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
+      <Link to="/customers/readthestory" >  <img class="white-board-image"  src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
         </div>
       </div>
-      <div class="cust3" style={{padding:"100px 100px",display:"flex",justifyContent:"space-evenly"}} >
+      <div class="cust3"  >
         <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/freshworks-light-bg.png" alt="freshworks" width="140" style={{height:"30px"}} />
         <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="freshworks" width="130"style={{height:"35px"}} />
         <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/linuxacademy-logo.png" alt="freshworks" width="182" style={{height:"40px"}} />
         <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/fujitsu.png" alt="freshworks" width="90" style={{height:"40px"}} />
       </div>
 
-      <div class="cust4" style={{padding:"0px 100px",display:"flex",alignContent:"center"}} >
+      <div class="cust4" style={{padding:"80px 100px",display:"flex"}} >
          <div>
-          <img style={{transform:"scale(0.8)"}} src="https://user-images.githubusercontent.com/107903370/207796339-a2fcc3c2-c22d-4b33-bd55-898c2da864cc.png" alt="freshDesk" />
+          <img class='freskdesk-logo'  src="https://user-images.githubusercontent.com/107903370/207796339-a2fcc3c2-c22d-4b33-bd55-898c2da864cc.png" alt="freshDesk" />
          </div>
-         <div style={{paddingTop:"80px"}} >
-          <img src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" width="120" alt="freedom" style={{marginBottom:"30px"}} />
-          <div style={{width:"400px"}} >
-          <Text fontSize='22px'> We didn't have another choice, we never had to choose between Chargebee and another provider. Chargebee was the clear winner.</Text>
+         <div  >
+          <img  src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" width="120" alt="freedom" style={{marginBottom:"30px"}} />
+          <div  >
+          <Text fontSize='22px'> We didn't have another choice,  we never had to choose between  Chargebee and another provider. Chargebee was the clear winner.</Text>
           <div style={{display:"flex",margin:"0px",alignItems:"center"}} >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/freedom-fred.png" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",margin:"20px"}} />  <label>Fred Stutzman, CEO, Freedom</label>
          </div>
