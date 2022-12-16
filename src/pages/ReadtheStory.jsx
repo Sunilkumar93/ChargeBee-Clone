@@ -113,7 +113,9 @@ const ReadtheStory = () => {
           </div>
         </div>
         <div class="readstory5" style={{display:"flex",padding:"100px 180px"}} >
-
+                 <div>
+                  <img src="" />
+                 </div>
         </div>
     </div>
   )
