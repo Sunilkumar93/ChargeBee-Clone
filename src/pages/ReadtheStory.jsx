@@ -17,9 +17,31 @@ const ReadtheStory = () => {
                 <Heading>
                 How Whiteboard reduced Churn by 100% using Chargebee
                 </Heading>
-                <Text>And increased their MRR by 35% with improved billing operations</Text>
+                <Text fontSize="20px" style={{paddingTop:"10px"}} >And increased their MRR by 35% with improved billing operations</Text>
                 </div>
              </div>
+        </div>
+        <div class="readstory2" style={{display:"flex",padding:"100px 250px",justifyContent:"center"}} >
+                <div style={{width:"600px"}} >
+                <div style={{width:"188px",backgroundColor:"gold",height:"5px",position:"relative",top:"-5px"}} ></div>
+                <Text as='b' fontSize="20px" style={{position:"relative",top:"-30px"}} > Operational Hassles </Text> <br/>
+               
+                <b style={{color:"gray"}} >Operational nightmare on customer retention <br/> and revenue recovery</b>
+               <div  >
+               <Text>
+                Whiteboard couldn’t streamline operations around payment failures with inconsistent policies around deactivations and cancelations.
+                </Text>
+               </div>
+                </div>
+                <div style={{width:"1px",backgroundColor:"gray",height:"100px"}} ></div>
+                <div  style={{width:"600px"}}>
+                   
+                <div style={{width:"150px",backgroundColor:"gold",height:"5px",}} ></div>
+                <Text as='b' fontSize="20px" style={{position:"relative",top:"-25px"}} > After Chargebee </Text><br/>
+                <b>Better dunning for improved revenue recovery and reduced churn</b>
+               
+                </div>
+
         </div>
     </div>
   )
