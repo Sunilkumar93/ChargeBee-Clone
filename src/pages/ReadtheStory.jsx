@@ -22,24 +22,36 @@ const ReadtheStory = () => {
              </div>
         </div>
         <div class="readstory2" style={{display:"flex",padding:"100px 250px",justifyContent:"center"}} >
-                <div style={{width:"600px"}} >
+                <div style={{padding:"30px"}} >
                 <div style={{width:"188px",backgroundColor:"gold",height:"5px",position:"relative",top:"-5px"}} ></div>
                 <Text as='b' fontSize="20px" style={{position:"relative",top:"-30px"}} > Operational Hassles </Text> <br/>
                
                 <b style={{color:"gray"}} >Operational nightmare on customer retention <br/> and revenue recovery</b>
                <div  >
-               <Text>
-                Whiteboard couldn’t streamline operations around payment failures with inconsistent policies around deactivations and cancelations.
+               <Text style={{padding:"10px 0px"}} >
+                Whiteboard couldn’t streamline operations around <br/>  payment failures with inconsistent policies around <br/> deactivations and cancelations.
+                </Text>
+                <b style={{color:"gray"}} >Unreliable and incorrect SaaS metrics</b>
+
+                <Text style={{padding:"10px 0px"}} >
+                Whiteboard was not anchored on the right SaaS <br/> success metrics (MRR, ARR, Churn, etc.)
                 </Text>
                </div>
                 </div>
-                <div style={{width:"1px",backgroundColor:"gray",height:"100px"}} ></div>
-                <div  style={{width:"600px"}}>
+                
+                <div  style={{padding:"30px"}}>
                    
                 <div style={{width:"150px",backgroundColor:"gold",height:"5px",}} ></div>
                 <Text as='b' fontSize="20px" style={{position:"relative",top:"-25px"}} > After Chargebee </Text><br/>
-                <b>Better dunning for improved revenue recovery and reduced churn</b>
-               
+                <b  style={{color:"gray"}}>Better dunning for improved revenue recovery <br/> and reduced churn</b>
+                <Text style={{padding:"10px 0px"}} >
+                Chargebee’s Dunning helped standardize processes <br/> around payment failures, improving MRR by 35% <br/> and reducing churn by 100%.
+                </Text>
+                <b style={{color:"gray"}} >RevenueStory for accurate subscription analytics</b>
+
+                <Text style={{padding:"10px 0px"}} >
+                RevenueStory made it pretty easy to put critical <br/> measurements in place. MRR, ARR, Churn, <br/> Expansion, etc. are all at their fingertips every day.
+                </Text>
                 </div>
 
         </div>
