@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Hide, Image, Show,Button } from '@chakra-ui/react'
-import { LockIcon } from '@chakra-ui/icons'
+import { LockIcon, UnlockIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react'
 import {
   Drawer,
@@ -14,17 +14,43 @@ import {
 import React from 'react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
+import { useSelector,useDispatch } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import app from "../firebase";
+import { login } from "../Redux/auth/auth.action";
+
+
+
 const Navbar = () => {
 
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   // const [placement, setPlacement] = React.useState("right");
+  const auth = getAuth(app);
+  const user = useSelector((store)=> store.user)
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
   
+
+console.log(user)
 
   const handleClick = (newSize) => {
     setSize(newSize);
     onOpen();
   };
+
+  
+  const handleAuthentication = () => {
+    if(user){
+      signOut(auth).then(() => {
+        alert("Sign-out successfully") 
+        dispatch(login(null))
+        navigate("/")
+      }).catch((error) => {
+        alert(error)
+      });
+    }
+  }
  
 
   return (
@@ -46,7 +72,11 @@ const Navbar = () => {
       <Box  display="flex" alignItems="center" gap="5"   >
         <Hide below="md">
         <span >English</span>
-        <Link to="/login"><LockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Login</Link>
+
+
+        {/* <LockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Login */}
+        <Link to={!user && "/login"} onClick={handleAuthentication} >{user ? <Box  ><UnlockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Logout</Box> : <Box><LockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Login</Box> }</Link>
+
         <Link to="/demo"><button className="o" style={{padding:"5px 10px",color:"white"}} >Get a Demo &#62;</button></Link>
         </Hide>
 
