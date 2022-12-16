@@ -8,6 +8,7 @@ import Partners from "./Partners";
 import Price from "./Price";
 import Resources from "./Resources";
 import Signup from "./Signup";
+import ReadtheStory from "./ReadtheStory";
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
       <Route path="/partners" element={<Partners />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/demo" element={<Demo />} />
+      <Route path="/customers/readthestory" element={<ReadtheStory/>} ></Route>
     </Routes>
   );
 };
