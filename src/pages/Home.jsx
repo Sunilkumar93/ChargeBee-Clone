@@ -4,7 +4,7 @@ import HomeSlider from "../components/home/HomeSlider";
 
 const Home = () => {
   return (
-    <Container pt="120px" px="0" maxW={{ base: "95%", md: "90%", lg: "95%" }}>
+    <Container mt={{ base: "-240px", md: "120px", lg: "100px" }} px="10px" maxW={{ base: "95%", md: "90%", lg: "95%" }}>
       <HomeSlider />
     </Container>
   );
