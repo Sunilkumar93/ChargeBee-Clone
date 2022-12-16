@@ -17,7 +17,7 @@ import i8 from "../../assets/logos-sprite8.png";
 
 const LogoSlider = () => {
   return (
-    <Container mt="20px" h="30px" maxW={{ base: "100%", md: "80%", lg: "75%" }}>
+    <Container h="30px" maxW={{ base: "100%", md: "80%", lg: "75%" }}>
       <Swiper
         slidesPerView={4}
         loop={true}

@@ -13,7 +13,7 @@ const HomeSlider = () => {
   return (
     <Box
       position="relative"
-      h={{ base: "150vh", md: "40vh", lg: "50vh" }}
+      h={{ base: "1050px", md: "450px", lg: "450px" }}
       overflow="hidden"
     >
       <Swiper
@@ -24,7 +24,6 @@ const HomeSlider = () => {
         }}
         pagination={{
           clickable: true,
-          
         }}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
