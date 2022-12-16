@@ -30,7 +30,7 @@ const Navbar = () => {
   const user = useSelector((store)=> store.user)
   const dispatch = useDispatch()
   const navigate = useNavigate();
-  
+  // todo :- navbar responsive
 
 console.log(user)
 
