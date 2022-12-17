@@ -3,23 +3,23 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AllRoutes from "./pages/AllRoutes";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from "./firebase";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
+// import app from "./firebase";
 
 
 function App() {
-  const auth = getAuth(app);
+  // const auth = getAuth(app);
 
-   useEffect(()=> {
-    onAuthStateChanged(auth, (authUser) => {
-      if (authUser) {
-        console.log("the user is ...",authUser);
+  //  useEffect(()=> {
+  //   onAuthStateChanged(auth, (authUser) => {
+  //     if (authUser) {
+  //       console.log("the user is ...",authUser);
         
-      } else {
+  //     } else {
        
-      }
-    });
-   },[auth])
+  //     }
+  //   });
+  //  },[auth])
   
    
   return (
