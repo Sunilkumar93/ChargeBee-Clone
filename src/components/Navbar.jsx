@@ -32,7 +32,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   
 
-console.log(user)
+
 
   const handleClick = (newSize) => {
     setSize(newSize);

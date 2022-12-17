@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 
 import "./Billing.css";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Billing = () => {
   return (
@@ -58,10 +59,11 @@ const Billing = () => {
           <Grid
             templateColumns={{ base: "repeat(4,1fr)", lg: "repeat(2,1fr)" }}
             gap="7"
+            p="2"
             overflow="scroll"
             className="hideScrollbar"
           >
-            <VStack alignItems="start" gap="2" boxSize={250}>
+            <VStack alignItems="start" gap="2" p="2" boxSize={250} boxShadow="xl" _hover={{boxShadow:"2xl"}} >
               <Box>
                 <Image
                   src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/rethink-pricing.svg"
@@ -79,81 +81,9 @@ const Billing = () => {
                   get easier!
                 </Text>
               </Box>
-              <Box alignSelf="end">
-                <Link textDecoration="none" color="blue">
-                  Learn more{" "}
-                </Link>
-              </Box>
-            </VStack>
-            <VStack alignItems="start" gap="2" boxSize={250}>
-              <Box>
-                <Image
-                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/rethink-pricing.svg"
-                  alt="logo"
-                />
-              </Box>
-              <Box>
-                <Heading as="h3" fontSize="1rem">
-                  Rethink Pricing
-                </Heading>
-              </Box>
-              <Box>
-                <Text color="#64648c" fontSize="1rem">
-                  Pricing models. Grandfathering. One-click roll-back. Doesn't
-                  get easier!
-                </Text>
-              </Box>
-              <Box alignSelf="end">
-                <Link textDecoration="none" color="blue">
-                  Learn more{" "}
-                </Link>
-              </Box>
-            </VStack>
-            <VStack alignItems="start" gap="2" boxSize={250}>
-              <Box>
-                <Image
-                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/rethink-pricing.svg"
-                  alt="logo"
-                />
-              </Box>
-              <Box>
-                <Heading as="h3" fontSize="1rem">
-                  Rethink Pricing
-                </Heading>
-              </Box>
-              <Box>
-                <Text color="#64648c" fontSize="1rem">
-                  Pricing models. Grandfathering. One-click roll-back. Doesn't
-                  get easier!
-                </Text>
-              </Box>
-              <Box alignSelf="end">
-                <Link textDecoration="none" color="blue">
-                  Learn more{" "}
-                </Link>
-              </Box>
-            </VStack>
-            <VStack alignItems="start" gap="2" boxSize={250}>
-              <Box>
-                <Image
-                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/rethink-pricing.svg"
-                  alt="logo"
-                />
-              </Box>
-              <Box>
-                <Heading as="h3" fontSize="1rem">
-                  Rethink Pricing
-                </Heading>
-              </Box>
-              <Box>
-                <Text color="#64648c" fontSize="1rem">
-                  Pricing models. Grandfathering. One-click roll-back. Doesn't
-                  get easier!
-                </Text>
-              </Box>
-              <Box alignSelf="end">
-                <Link textDecoration="none" color="blue">
-                  Learn more{" "}
+              <Box  alignSelf="end">
+                <Link  textDecoration="none" color="blue">
+                  Learn more {<ExternalLinkIcon />}
                 </Link>
               </Box>
             </VStack>
