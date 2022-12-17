@@ -22,7 +22,29 @@
     padding:100px 100px;display:flex;justify-content:space-evenly
 }
 .freskdesk-logo{
-    width: 1200px;
+    width: 700px;
+}
+.cust4{
+    display: flex;
+    padding: 80px 100px;
+    margin: auto;
+    justify-content: center;
+}
+.freedom-text{
+    width: 350px;
+    
+}
+.cust4-right{
+    padding: 40px;
+}
+
+.cust5{
+    padding:100px 100px;display:flex;justify-content:space-evenly;
+}
+
+.cust7{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:100px 300px;
+    align-items: center;
 }
 @media all and (min-width: 401px) and (max-width: 800px) {
     .cust1{
@@ -50,4 +72,21 @@
             padding: 5px;
             
         }
+        .cust4{
+            padding: 80px 50px;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+        }
+        .cust5{
+            padding:100px 20px;display:grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        .cust5 img{
+            border: 1px solid gray;
+        }
+        .cust7{
+            padding: 100px 0px;
+        }
+        
 }

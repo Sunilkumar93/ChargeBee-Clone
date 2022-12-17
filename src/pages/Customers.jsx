@@ -49,14 +49,16 @@ const Customers = () => {
         <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/fujitsu.png" alt="freshworks" width="90" style={{height:"40px"}} />
       </div>
 
-      <div class="cust4" style={{padding:"80px 100px",display:"flex"}} >
+      <div class="cust4"  >
          <div>
           <img class='freskdesk-logo'  src="https://user-images.githubusercontent.com/107903370/207796339-a2fcc3c2-c22d-4b33-bd55-898c2da864cc.png" alt="freshDesk" />
          </div>
-         <div  >
-          <img  src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" width="120" alt="freedom" style={{marginBottom:"30px"}} />
+         <div class='cust4-right'  >
+          <img class='freedom-logo' src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" width="120" alt="freedom" style={{marginBottom:"30px"}} />
           <div  >
-          <Text fontSize='22px'> We didn't have another choice,  we never had to choose between  Chargebee and another provider. Chargebee was the clear winner.</Text>
+          <div class="freedom-text" >
+          <Text fontSize='22px'> We didn't have another choice,  we  never had to choose between  Chargebee and another provider. Chargebee was the clear winner.</Text>
+          </div>
           <div style={{display:"flex",margin:"0px",alignItems:"center"}} >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/freedom-fred.png" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",margin:"20px"}} />  <label>Fred Stutzman, CEO, Freedom</label>
          </div>
@@ -64,22 +66,22 @@ const Customers = () => {
          </div>
       </div>
 
-      <div class="cust5" style={{padding:"100px 100px",display:"flex",justifyContent:"space-evenly"}} >
+      <div class="cust5"  >
         <img src="https://www.chargebee.com/static/resources/customers/percona.png" alt="percona" width="140" style={{height:"30px"}} />
         <img src="https://www.chargebee.com/static/resources/customers/cosmos.png" alt="cosmos" width="100"style={{height:"35px"}} />
         <img src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" alt="freshworks" width="182" style={{height:"40px"}} />
         <img src="https://www.chargebee.com/static/resources/customers/crew.svg" alt="freshworks" width="90" style={{height:"40px"}} />
         <img src="https://www.chargebee.com/static/resources/customers/gigwell.png" width="150" alt="gigwell" />
       </div>
-      <div class="cust6" style={{margin:"auto",display:"flex",justifyContent:"center"}} >
+      <div class="cust6" style={{display:"flex",justifyContent:"center"}} >
       
         <iframe width="760" height="455" src="https://www.youtube.com/embed/R9XgyoLQ9qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="cust7" style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:"20px",padding:"100px 300px", hover:"cursor:pointer" }} >
+      <div class="cust7"  >
         {list.map((el)=>{
-          return<div key={el.id} style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",padding:"20px",borderRadius:"5px",height:"220px"}} >
+          return<div key={el.id} style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",padding:"20px",borderRadius:"5px"}} >
             <img src={el.source} alt={el.id} style={{width:"200px",margin:"15px"}} />
-            <div  style={{width:"400px",margin:"15px"}} > <Text fontSize='18px' color='navyBlue' as="lb" style={{}} > {el.text} </Text> </div>
+            <div  style={{margin:"15px"}} > <Text fontSize='18px' color='navyBlue' as="lb" style={{}} > {el.text} </Text> </div>
           </div>
         })}
       </div>
