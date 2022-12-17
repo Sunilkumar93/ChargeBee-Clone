@@ -9,6 +9,7 @@ import {
   Flex,
   Tag,
   Image,
+  Heading,
 } from '@chakra-ui/react';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -40,13 +41,13 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
   return (
     <Box
-      bg="white"
-      color="black"
+      // bg="white"
+      // color="black"
       >
       <Container as={Stack} maxW={'7xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 2,lg:4 }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader   >Product &#62;</ListHeader>
+            <Box bg="#fff" color="#38039a"  ><Heading size="md" opacity=".75" style={{fontWeight:"bolder"}}   >Product &#62;</Heading></Box>
             <Link href={'#'}>Subscription Management</Link>
             <Stack direction={'row'} align={'center'} spacing={2}>
               <Link href={'#'}>Features</Link>
@@ -66,7 +67,8 @@ export default function Footer() {
             <Link href={'#'}>Integrations</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader  >Help & Support &#62;</ListHeader>
+            {/* <ListHeader  >Help & Support &#62;</ListHeader> */}
+            <Box bg="#fff" color="#38039a"  ><Heading size="md" opacity=".75" style={{fontWeight:"bolder"}}   >Help & Support &#62;</Heading></Box>
             <Link href={'#'}>Security</Link>
             <Link href={'#'}>FAQs</Link>
             <Link href={'#'}>Status</Link>
@@ -76,7 +78,8 @@ export default function Footer() {
             <Link href={'#'}>Sitemap</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader  >Resources &#62;</ListHeader>
+            {/* <ListHeader  >Resources &#62;</ListHeader> */}
+            <Box bg="#fff" color="#38039a"  ><Heading size="md" opacity=".75" style={{fontWeight:"bolder"}}   >Resources &#62;</Heading></Box>
             <Link href={'#'}>Blog</Link>
             <Link href={'#'}>Compare Payment Gateways</Link>
             <Link href={'#'}>Tackling Payment Failures</Link>
@@ -87,7 +90,8 @@ export default function Footer() {
             <Link href={'#'}>Subscription Academy</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader  >Company &#62;</ListHeader>
+            {/* <ListHeader  >Company &#62;</ListHeader> */}
+            <Box  bg="#fff" color="#38039a"  ><Heading opacity=".75" size="md" style={{fontWeight:"bolder"}}   >Company &#62;</Heading></Box>
             <Link href={'#'}>Customers</Link>
             <Link href={'#'}>Partners</Link>
             <Link href={'#'}>Careers</Link>
