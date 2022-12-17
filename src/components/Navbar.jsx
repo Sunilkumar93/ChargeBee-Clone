@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,NavLink } from "react-router-dom";
 import { Box, Hide, Image, Show,Button } from '@chakra-ui/react'
 import { LockIcon, UnlockIcon } from '@chakra-ui/icons'
 import { useDisclosure } from '@chakra-ui/react'
@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-
+import "./Navbar.css"
 import { useSelector,useDispatch } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../firebase";
@@ -23,21 +23,24 @@ import { login } from "../Redux/auth/auth.action";
 
 const Navbar = () => {
 
-  const [size, setSize] = React.useState("");
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  // const [placement, setPlacement] = React.useState("right");
+  const [size, setSize] = React.useState('')
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [placement, setPlacement] = React.useState("right");
   const auth = getAuth(app);
   const user = useSelector((store)=> store.user)
   const dispatch = useDispatch()
   const navigate = useNavigate();
-  // todo :- navbar responsive
+  
 
 console.log(user)
 
+ 
   const handleClick = (newSize) => {
-    setSize(newSize);
-    onOpen();
-  };
+    setSize(newSize)
+    onOpen()
+  }
+ 
+ 
 
   
   const handleAuthentication = () => {
@@ -65,7 +68,7 @@ console.log(user)
           <Link to="/price">Pricing</Link>
           <Link to="/"><span>Solutions</span></Link>
           <Link to="/customers">Customers</Link>
-          <Link to="/resources">Resources</Link>
+          <Link to="/">Resources</Link>
           <Link to="/partners">Partners</Link>
           </Hide>
       </Box>
@@ -82,34 +85,40 @@ console.log(user)
 
       </Box>
       <Show below="md">
-      <Box m="auto" display="flex" alignItems="center" justifyContent="center" onClick={() => handleClick(size)}  >
-                     <HamburgerIcon position="fixed"  right="20px"   key={size}   fontWeight="bold" h={8} w={8} color="black"  />
+      <Box >
+                   <button onClick={() => handleClick(size)} key={size} >
+                      {<HamburgerIcon boxSize="1.5em" />}
+                    </button>
                      {/* ----------------------------- */}
                      <Drawer onClose={onClose} isOpen={isOpen} size={size}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton border="2px solid #fb982f" bg="black" color="#fff" />
+          <DrawerCloseButton border="2px solid #38039a" bg="#fff" color="#38039a" />
           <DrawerHeader ></DrawerHeader>
           <DrawerBody>
           <Box    className='navbar_right' flexGrow="3"  >
-              <Button bg="black" as="a" href="https://drive.google.com/uc?id=1aP-AGJxtXnLABlQ98f3C9eUCpOxpYnUo&export=download"  className='side' download onClick={onClose} >RESUME &#8595;
-              </Button>
+              
 
-              <Link to="home" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose}  className='side'>Home</p></Link>
+              <Link to="/"  onClick={onClose}  ><p onClick={onClose}  className='side'>Home</p></Link>
 
-              <Link to="about" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side'>About</p></Link>
 
-              <Link to="education" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side'>Education</p></Link>
+              <Link to="/price"  onClick={onClose}  ><p onClick={onClose} className='side'>Pricing</p></Link>
 
-              <Link to="skill" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side'>Skills</p></Link>
+              <Link to="/customers"  onClick={onClose}  ><p onClick={onClose} className='side' >Customers</p></Link>
+              <Link to="/partners"  onClick={onClose}  ><p onClick={onClose} className='side'>Partners</p></Link>
 
-              <Link to="projects" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side' >Projects</p></Link>
+              <Link to="#"  onClick={onClose}  ><p onClick={onClose} className='side'>Product</p></Link>
 
-              <Link to="github" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side'>Github</p></Link>
+              <Link to="#"  onClick={onClose}  ><p onClick={onClose} className='side'>Solutions</p></Link>
 
-              <Link to="achievements" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side' >Achievements</p></Link>
 
-              <Link to="contact" duration={2000} onClick={onClose}    spy={true}    smooth={true}    ><p onClick={onClose} className='side'>Contact</p></Link>
+              <Link to="/"  onClick={onClose}  ><p onClick={onClose} className='side' >Resources</p></Link>
+
+
+              <Link  to={!user && "/login"}  onClick={handleAuthentication} >{user ? <Box onClick={onClose} className='side'><UnlockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Logout</Box> : <Box onClick={onClose} className='side'><LockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Login</Box> }</Link>
+              {/* <Link to="/login"  onClick={onClose}  ><p onClick={onClose} className='side'>Login</p></Link> */}
+
+
 
             </Box>
           </DrawerBody>
