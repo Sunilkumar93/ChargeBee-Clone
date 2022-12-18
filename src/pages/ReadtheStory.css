@@ -1,0 +1,27 @@
+.readstory1{
+    display: flex;
+    padding: 100px 180px;
+}
+.readstory2{
+    display:flex;padding:100px 250px;justify-content:center
+}
+.readstory1-right:nth-child(1){
+    position: relative
+    top;
+}
+.white-Board{
+width:600px;border-radius:15px
+}
+@media all and (min-width: 440px) and (max-width: 900px) {
+    .readstory1{
+        padding: 100px 0px;
+        padding-bottom: 0px;
+    }
+}
+@media all and (min-width: 100px) and (max-width: 440px) {
+    .readstory1{
+        padding: 100px 0px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
