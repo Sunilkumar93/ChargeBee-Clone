@@ -6,8 +6,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./HomeSlider.css";
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const HomeSlider = () => {
   return (
@@ -18,10 +27,10 @@ const HomeSlider = () => {
     >
       <Swiper
         centeredSlides={true}
-        autoplay={{
-          delay: 5500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 5500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
@@ -51,6 +60,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -58,6 +68,20 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="35%"
+                right="8%"
+              >
+                <Box>
+                  <Text fontWeight={600}>José Bolaños</Text>
+                </Box>
+                <Box>
+                  <Text>CTO - Slidebean</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -86,8 +110,8 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-               w="70%"
-               h="100%"
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/paul-kapsner.png"
                 alt="image"
               />
@@ -152,8 +176,8 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-               w="70%"
-               h="100%"
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/antoine-louiset.png"
                 alt="image"
               />
@@ -239,7 +263,7 @@ const HomeSlider = () => {
             color="black"
             _hover={{ gap: "3px" }}
           >
-            Signup for free
+            <Link to="/signup"> Signup for free</Link>
           </Button>
         </Flex>
       </Box>

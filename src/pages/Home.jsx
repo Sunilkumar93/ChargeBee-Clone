@@ -18,6 +18,7 @@ const Home = () => {
       display="flex"
       flexDirection="column"
       mt={{ base: "-240px", md: "120px", lg: "100px" }}
+      mb="50px"
       gap={"55px"}
       px="10px"
       maxW={{ base: "95%", md: "90%", lg: "95%" }}

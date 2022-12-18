@@ -1,5 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Box, Hide, Image, Show } from "@chakra-ui/react";
+import {
+  Box,
+  Hide,
+  Image,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Show,
+} from "@chakra-ui/react";
 import { LockIcon, UnlockIcon } from "@chakra-ui/icons";
 import { useDisclosure } from "@chakra-ui/react";
 import {
@@ -17,11 +25,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import app from "../firebase";
 import { login } from "../Redux/auth/auth.action";
+import Product from "./Product/Product";
+import Solutions from "./Solutaions/Solutions";
+import Resources from "./Resources/Resources";
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [placement, setPlacement] = React.useState("right");
+
   const auth = getAuth(app);
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
@@ -72,14 +83,37 @@ const Navbar = () => {
           </Link>
           <Hide below="md">
             <Link to="/">
-              <span>Product</span>
+              <Popover matchWidth={false} trigger="hover">
+                <PopoverTrigger>
+                  <span>Product</span>
+                </PopoverTrigger>
+                <PopoverContent w="100%" mt="10px">
+                  <Product />
+                </PopoverContent>
+              </Popover>
             </Link>
             <Link to="/price">Pricing</Link>
             <Link to="/">
-              <span>Solutions</span>
+              <Popover matchWidth={false} trigger="hover">
+                <PopoverTrigger>
+                  <span>Solutions</span>
+                </PopoverTrigger>
+                <PopoverContent w="100%" mt="10px">
+                  <Solutions />
+                </PopoverContent>
+              </Popover>
             </Link>
             <Link to="/customers">Customers</Link>
-            <Link to="/">Resources</Link>
+            <Link to="/">
+              <Popover matchWidth={false} trigger="hover">
+                <PopoverTrigger>
+                  <span>Resources</span>
+                </PopoverTrigger>
+                <PopoverContent w="100%" mt="10px">
+                  <Resources />
+                </PopoverContent>
+              </Popover>
+            </Link>
             <Link to="/partners">Partners</Link>
           </Hide>
         </Box>
