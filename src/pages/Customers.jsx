@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react';
 
+import { Link } from 'react-router-dom';
+
+
 const Customers = () => {
   const[list,setList] = useState([]);
   const getData = async()=>{
@@ -38,7 +41,9 @@ const Customers = () => {
           
         </div>
         <div>
-        <img style={{transform:"scale(0.8)",position:"absolute",top:"100px"}} src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" />
+
+      <Link to="/customers/readthestory" >  <img style={{transform:"scale(0.8)",position:"absolute",top:"100px"}} src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
+
         </div>
       </div>
       <div class="cust3" style={{padding:"100px 100px",display:"flex",justifyContent:"space-evenly"}} >
