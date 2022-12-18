@@ -19,7 +19,7 @@ const HomeSlider = () => {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 4500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -53,7 +53,8 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-                boxSize="100%"
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
                 alt="image"
               />
@@ -72,8 +73,8 @@ const HomeSlider = () => {
                 fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
                 textAlign="start"
               >
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+                The billing platform that gives Superfoods the freedom to test,
+                iterate, and roll-back.
               </Heading>
             </Box>
 
@@ -85,8 +86,9 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-                boxSize="100%"
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+               w="70%"
+               h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/paul-kapsner.png"
                 alt="image"
               />
             </Box>
@@ -104,8 +106,8 @@ const HomeSlider = () => {
                 fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
                 textAlign="start"
               >
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+                The revenue engine that powered MakeSpace to launch a B2B model
+                overnight.
               </Heading>
             </Box>
 
@@ -117,8 +119,9 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-                boxSize="100%"
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+                w="70%"
+                h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/rahul-gandhi.png"
                 alt="image"
               />
             </Box>
@@ -136,8 +139,8 @@ const HomeSlider = () => {
                 fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
                 textAlign="start"
               >
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+                The revenue toolkit that allowed Yousign to enter a new market
+                that now drives 15% MRR.
               </Heading>
             </Box>
 
@@ -149,8 +152,9 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-                boxSize="100%"
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+               w="70%"
+               h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/antoine-louiset.png"
                 alt="image"
               />
             </Box>
@@ -168,8 +172,8 @@ const HomeSlider = () => {
                 fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
                 textAlign="start"
               >
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+                The infrastructure that allows Rise Vision to ask “What Does
+                This Make Possible?”
               </Heading>
             </Box>
 
@@ -181,8 +185,9 @@ const HomeSlider = () => {
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
             >
               <Image
-                boxSize="100%"
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+                w="70%"
+                h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/debbie-barrafato.png"
                 alt="image"
               />
             </Box>

@@ -17,7 +17,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 const Billing = () => {
   return (
     <Box w="full">
-      <Flex gap={7} flexDir={{ base: "column", lg: "row" }}>
+      <Flex gap={10} flexDir={{ base: "column", lg: "row" }}>
         <Box w={{ base: "100%", md: "80%", lg: "30%" }}>
           <VStack
             pr={{ base: "0", lg: "80px" }}
@@ -55,15 +55,22 @@ const Billing = () => {
             </Show>
           </VStack>
         </Box>
-        <Box w={{ base: "full", lg: "70%" }}>
+        <Box w={{ base: "full", lg: "50%" }}>
           <Grid
             templateColumns={{ base: "repeat(4,1fr)", lg: "repeat(2,1fr)" }}
-            gap="7"
+            gap="5"
             p="2"
             overflow="scroll"
             className="hideScrollbar"
           >
-            <VStack alignItems="start" gap="2" p="2" boxSize={250} boxShadow="xl" _hover={{boxShadow:"2xl"}} >
+            <VStack
+              alignItems="start"
+              justifyContent="space-around"
+              p="2"
+              boxSize={250}
+              boxShadow="xl"
+              _hover={{ boxShadow: "2xl" }}
+            >
               <Box>
                 <Image
                   src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/rethink-pricing.svg"
@@ -81,8 +88,99 @@ const Billing = () => {
                   get easier!
                 </Text>
               </Box>
-              <Box  alignSelf="end">
-                <Link  textDecoration="none" color="blue">
+              <Box alignSelf="end">
+                <Link textDecoration="none" color="blue">
+                  Learn more {<ExternalLinkIcon />}
+                </Link>
+              </Box>
+            </VStack>
+            <VStack
+              alignItems="start"
+              justifyContent="space-around"
+              p="2"
+              boxSize={250}
+              boxShadow="xl"
+              _hover={{ boxShadow: "2xl" }}
+            >
+              <Box>
+                <Image
+                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/scale-globally.svg"
+                  alt="logo"
+                />
+              </Box>
+              <Box>
+                <Heading as="h3" fontSize="1rem">
+                  Scale Globally
+                </Heading>
+              </Box>
+              <Box>
+                <Text color="#64648c" fontSize="1rem">
+                  Currencies, compliance & taxes, all handled already.
+                </Text>
+              </Box>
+              <Box alignSelf="end">
+                <Link textDecoration="none" color="blue">
+                  Learn more {<ExternalLinkIcon />}
+                </Link>
+              </Box>
+            </VStack>
+            <VStack
+              alignItems="start"
+              justifyContent="space-around"
+              p="2"
+              boxSize={250}
+              boxShadow="xl"
+              _hover={{ boxShadow: "2xl" }}
+            >
+              <Box>
+                <Image
+                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/capture-new-segments.svg"
+                  alt="logo"
+                />
+              </Box>
+              <Box>
+                <Heading as="h3" fontSize="1rem">
+                  Capture New Segments
+                </Heading>
+              </Box>
+              <Box>
+                <Text color="#64648c" fontSize="1rem">
+                  March upmarket, go product-led, and everywhere between.
+                </Text>
+              </Box>
+              <Box alignSelf="end">
+                <Link textDecoration="none" color="blue">
+                  Learn more {<ExternalLinkIcon />}
+                </Link>
+              </Box>
+            </VStack>
+            <VStack
+              alignItems="start"
+             justifyContent="space-around"
+              p="2"
+              boxSize={250}
+              boxShadow="xl"
+              _hover={{ boxShadow: "2xl" }}
+            >
+              <Box>
+                <Image
+                  src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/icon/launch-into-subscriptions.svg"
+                  alt="logo"
+                />
+              </Box>
+              <Box>
+                <Heading as="h3" fontSize="1rem">
+                  Launch into Subscriptions
+                </Heading>
+              </Box>
+              <Box>
+                <Text color="#64648c" fontSize="1rem">
+                  Pilot a recurring revenue model without breaking what's
+                  working.
+                </Text>
+              </Box>
+              <Box alignSelf="end">
+                <Link textDecoration="none" color="blue">
                   Learn more {<ExternalLinkIcon />}
                 </Link>
               </Box>
