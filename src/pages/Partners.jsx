@@ -18,6 +18,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -50,6 +51,7 @@ function Card({ src }) {
           bg={{ base: "white", md: "white", lg: "#683bd0" }}
           borderRadius="5px 0px"
           padding="6px"
+          display={{ sm:'none', md: "none", lg: "none",xl:'none',"2xl":'12px' }}
         >
           <Image
             w={{ base: "0px", md: "0px", lg: "12px" }}
@@ -106,6 +108,7 @@ const Partners = () => {
       w={{ base: "200%", md: "100%" }}
     >
       <Box
+        className="top_nav"
         style={{
           width: "100%",
           height: "65px",
@@ -118,7 +121,8 @@ const Partners = () => {
           color: "white",
         }}
       >
-        <Box>
+
+        <Box className='first'>
           {" "}
           <Text fontSize={{ base: "xl", md: "2xl", lg: "3xl" }} as="b">
             Become a Partner
@@ -170,7 +174,7 @@ const Partners = () => {
               style={{
                 borderRadius: "20px",
                 mb: "1cm",
-                backgroundColor: " #522ec4",
+                bg: " #522ec4",
               }}
             >
               <Text
@@ -795,9 +799,9 @@ const Partners = () => {
               width="500"
               src="https://www.youtube.com/embed/VuemPP0sdcQ"
               title="YouTube video player"
-              frameborder="0"
+              
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              
             ></iframe>
           </Box>
           <Box className="container_iframe">
@@ -807,9 +811,9 @@ const Partners = () => {
               height="315"
               width="500"
               src="https://www.youtube.com/embed/2vtGuSSMyjo?playlist=2vtGuSSMyjo&amp;loop=1"
-              frameborder="0"
+            
               allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen=""
+             
             ></iframe>
           </Box>
         </SimpleGrid>
@@ -930,7 +934,7 @@ const Partners = () => {
           <button
             className="button btn1"
             display="flex"
-            backgroundColor="#a700f1"
+            bg="#a700f1"
           >
             Become A Partner{" "}
             <Box w="30px" mt="-28px" ml="240px" className="rightIcon">
