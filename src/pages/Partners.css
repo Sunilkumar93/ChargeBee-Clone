@@ -142,3 +142,12 @@
     transform: translateX(calc(-250px * 7));
   }
 }
+.top_nav > div:hover{
+  width: max-content;
+  padding:20px;
+  height: 100%;
+  background-color: #27054eef;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
