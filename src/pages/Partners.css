@@ -1,0 +1,144 @@
+.psp {
+  margin-top: 50px;
+  width: 77%;
+  gap: 20px;
+  margin: auto;
+}
+.image {
+  margin: auto;
+  display: flex;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.form {
+  box-shadow: rgba(54, 68, 226, 0.952) 0px 5px 15px;
+}
+.firstDiv {
+  background: linear-gradient(
+    107.66deg,
+    #4300a3 11.51%,
+    #6100bb 53.97%,
+    #a700f1 85.07%
+  ) !important;
+}
+.nextPageLink {
+  margin: 30px;
+  color: #531fc9;
+  background-color: #6b608315;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextPageLink:hover .righticon {
+  text-decoration: none;
+  margin-right: -18px;
+}
+.button,
+.button_part9 {
+  font-size: 26px;
+  padding: 14px 20px;
+  padding-right: 40px;
+  background: linear-gradient(
+    106.71deg,
+    #4300a3 11.13%,
+    #6100bb 85.15%,
+    #a700f1 116.91%
+  );
+  box-shadow: 0 0 1.78937px rgb(0 0 30 / 10%),
+    0 3.57875px 7.1575px rgb(0 0 30 / 10%),
+    0 7.1575px 14.315px rgb(0 0 30 / 10%);
+  border-radius: 3.57875px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  transition: 0.5s;
+  position: relative;
+}
+.part8 {
+  background: linear-gradient(
+    107.66deg,
+    #4300a3 11.51%,
+    #6100bb 53.97%,
+    #a700f1 85.07%
+  ) !important;
+  color: #fff;
+}
+.part8 .button_part9 {
+  background: #a700f1 85.07% !important;
+}
+.card_hover,
+.rightIcon {
+  transition: all 0.2s ease-in-out;
+}
+.card_hover:hover {
+  transform: translate(0, -6px);
+}
+.bottom_scroll {
+  overflow-x: auto;
+}
+.bottom_scroll div img {
+  width: 150px;
+}
+.bottom_scroll div::-webkit-scrollbar {
+  width: 0;
+}
+
+.button:hover .rightIcon {
+  transform: translate(14px, 0);
+}
+.btn1 {
+  background: #a700f1;
+}
+.container_iframe {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+.responsive_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.slider {
+  height: 250px;
+  margin: auto;
+  position: relative;
+  width: 80%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.slider_track {
+  display: flex;
+  width: calc(250px * 14);
+  animation: scroll 40s linear infinite;
+}
+.slide {
+  height: 200px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  perspective: 100px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
