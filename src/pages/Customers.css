@@ -7,7 +7,7 @@
     padding:60px 100px
 }
 .white-board-image{
-    transform:scale(0.8);position:absolute;top:100px;
+    width: 600px;position:absolute;top:100px;
 }
 .study-com-logo{
     transform: scale(0.6);
@@ -46,7 +46,10 @@
     display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:100px 300px;
     align-items: center;
 }
-@media all and (min-width: 401px) and (max-width: 800px) {
+.cust-list{
+    height: max-content;
+}
+@media all and (min-width: 440px) and (max-width: 900px) {
     .cust1{
         padding: 120px 0px;}
         .cust2{
@@ -67,9 +70,10 @@
         .cust3{
             padding: 50px 0px;
         }
-        .cust3 img{
+        .cust3-image{
             border: 1px solid;
-            padding: 5px;
+            padding: 10px;
+            /* padding-top: 8px; */
             
         }
         .cust4{
@@ -82,11 +86,71 @@
             grid-template-columns: repeat(4,1fr);
             gap: 20px;
         }
-        .cust5 img{
+        .cust5-image{
             border: 1px solid gray;
         }
         .cust7{
             padding: 100px 0px;
         }
         
+}
+
+@media all and (min-width: 100px) and (max-width: 440px) {
+    .cust1{
+        padding: 120px 0px;
+    width: 540px;}
+    .white-board-image{
+        position: static;
+        /* width: 300px; */
+    }
+    iframe{
+        width: 600;
+    }
+    .cust2{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 50px 0px;
+    }
+   .cust2-left{
+    width: max-content;
+    /* padding: 0px; */
+   }
+  
+   .cust3{
+    padding: 50px 0px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+.cust3-image{
+    border: 1px solid;
+    /* padding: 5px; */
+    
+}
+.cust4{
+    padding: 80px 0px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+.cust5{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    padding: 100px 0px;
+    gap: 25px;
+    justify-content: space-between;
+}
+.cust5-image{
+    border: 1px solid gray;
+    padding: 5px;
+}
+.cust7{
+    padding: 100px 0px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+}
+.cust-list{
+    width: 540px;
+}
+
 }

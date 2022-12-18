@@ -33,7 +33,7 @@ const Customers = () => {
         <div class="cust-left" > 
           <img class="study-com-logo"  src="https://webstatic.chargebee.com/assets/web/543/images/home/testimonial/cb-study.png" alt="study.com" />
           <p class='study-com-text'  >... Integration was easy and the <strong style={{fontStyle:"italic"}} >customer support provided was excellent. </strong> This is huge<br/>considering how deficient many players in the <br/> space are when... </p>
-         <div style={{display:"flex",margin:"50px",alignItems:"center",justifyContent:"space-around"}} >
+         <div  >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/voitek.jpeg" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",}} />  <label> Voitek Sobieszczanski, Director of Finance &amp; Operations</label>
          </div>
           
@@ -43,10 +43,10 @@ const Customers = () => {
         </div>
       </div>
       <div class="cust3"  >
-        <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/freshworks-light-bg.png" alt="freshworks" width="140" style={{height:"30px"}} />
-        <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="freshworks" width="130"style={{height:"35px"}} />
-        <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/linuxacademy-logo.png" alt="freshworks" width="182" style={{height:"40px"}} />
-        <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/fujitsu.png" alt="freshworks" width="90" style={{height:"40px"}} />
+     <div class='cust3-image' >   <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/freshworks-light-bg.png" alt="freshworks" width="140" style={{height:"30px"}} /> </div>
+       <div className='cust3-image' > <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="freshworks" width="130"style={{height:"35px"}} /> </div>
+      <div class='cust3-image' >  <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/linuxacademy-logo.png" alt="freshworks" width="182" style={{height:"40px"}} /> </div>
+     <div class='cust3-image' >   <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/fujitsu.png" alt="freshworks" width="90" style={{height:"40px"}} /> </div>
       </div>
 
       <div class="cust4"  >
@@ -67,11 +67,11 @@ const Customers = () => {
       </div>
 
       <div class="cust5"  >
-        <img src="https://www.chargebee.com/static/resources/customers/percona.png" alt="percona" width="140" style={{height:"30px"}} />
-        <img src="https://www.chargebee.com/static/resources/customers/cosmos.png" alt="cosmos" width="100"style={{height:"35px"}} />
-        <img src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" alt="freshworks" width="182" style={{height:"40px"}} />
-        <img src="https://www.chargebee.com/static/resources/customers/crew.svg" alt="freshworks" width="90" style={{height:"40px"}} />
-        <img src="https://www.chargebee.com/static/resources/customers/gigwell.png" width="150" alt="gigwell" />
+     <div class='cust5-image' >  <img src="https://www.chargebee.com/static/resources/customers/percona.png" alt="percona" width="140" style={{height:"30px"}} /> </div> 
+     <div class='cust5-image' >   <img src="https://www.chargebee.com/static/resources/customers/cosmos.png" alt="cosmos" width="100"style={{height:"35px"}} /> </div>
+     <div class='cust5-image' >       <img src="https://www.chargebee.com/static/resources/customers/freedom-logo.png" alt="freshworks" width="182" style={{height:"40px"}} /> </div>
+     <div class='cust5-image' >   <img src="https://www.chargebee.com/static/resources/customers/crew.svg" alt="freshworks" width="90" style={{height:"40px"}} />  </div>
+     <div class='cust5-image' >   <img src="https://www.chargebee.com/static/resources/customers/gigwell.png" width="150" alt="gigwell" /> </div>
       </div>
       <div class="cust6" style={{display:"flex",justifyContent:"center"}} >
       
@@ -79,9 +79,9 @@ const Customers = () => {
       </div>
       <div class="cust7"  >
         {list.map((el)=>{
-          return<div key={el.id} style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",padding:"20px",borderRadius:"5px"}} >
-            <img src={el.source} alt={el.id} style={{width:"200px",margin:"15px"}} />
-            <div  style={{margin:"15px"}} > <Text fontSize='18px' color='navyBlue' as="lb" style={{}} > {el.text} </Text> </div>
+          return<div class='cust-list' key={el.id} style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",padding:"20px",borderRadius:"5px"}} >
+            <img src={el.source} alt={el.id} style={{width:"180px",margin:"15px"}} />
+            <div  style={{margin:"10px"}} > <Text fontSize='18px' color='navyBlue' as="lb" style={{}} > {el.text} </Text> </div>
           </div>
         })}
       </div>
