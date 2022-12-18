@@ -3,8 +3,10 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AllRoutes from "./pages/AllRoutes";
+
 // import { getAuth, onAuthStateChanged } from "firebase/auth";
 // import app from "./firebase";
+
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
       
       <AllRoutes   />
       <Footer />
+      {/* <Customers/> */}
       
     </div>
   );
