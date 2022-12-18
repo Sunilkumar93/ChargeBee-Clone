@@ -1,9 +1,4 @@
-import {
-  ArrowForwardIcon,
-  CheckCircleIcon,
-  CheckIcon,
-  PhoneIcon,
-} from "@chakra-ui/icons";
+import { ArrowForwardIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import {
   Box,
   Center,
@@ -11,10 +6,6 @@ import {
   Heading,
   Image,
   Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -416,7 +407,12 @@ const Price = () => {
           </Box>
         </Box>
       </Flex>
-      <Box background="#f8f8f8" marginBottom="100px" paddingTop="50px" paddingBottom="80px">
+      <Box
+        background="#f8f8f8"
+        marginBottom="100px"
+        paddingTop="50px"
+        paddingBottom="80px"
+      >
         <Flex gap="60px" maxWidth="1100px" margin="auto">
           <Box width="600px" textAlign="left">
             <Heading size="xl" fontWeight="medium" mb="30px">

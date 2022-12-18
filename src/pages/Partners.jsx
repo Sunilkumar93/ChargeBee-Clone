@@ -17,8 +17,8 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon
- 
+  AccordionIcon,
+
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -97,7 +97,7 @@ const Partners = () => {
     return () => {
       resetTimeout();
     };
-  }, [imgInd]);
+  }, [imgInd, PopularBrandimages.length]);
 
   return (
     <Box
@@ -806,6 +806,7 @@ const Partners = () => {
           </Box>
           <Box className="container_iframe">
             <iframe
+              title="youtube_video"
               className="responsive_iframe"
               height="315"
               width="500"

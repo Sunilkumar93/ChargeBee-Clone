@@ -1,3 +1,5 @@
+
+
 import { Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react';
 import { Button } from '@chakra-ui/react'
@@ -98,4 +100,4 @@ const Customers = () => {
   )
 }
 
-export default Customers
+export default Customers;

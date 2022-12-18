@@ -13,10 +13,10 @@ const firebaseConfig = {
   storageBucket: "e-mail-auth-chargebee.appspot.com",
   messagingSenderId: "525054354823",
   appId: "1:525054354823:web:dbccc62224cf9097f2df22",
-  measurementId: "G-0MQM25JGLS"
+  measurementId: "G-0MQM25JGLS",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // export const auth = firebase.auth()
-export default app
+export default app;

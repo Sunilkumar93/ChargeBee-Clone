@@ -66,8 +66,9 @@ const Billing = () => {
             <VStack
               alignItems="start"
               justifyContent="space-around"
-              p="2"
-              boxSize={250}
+              px="8"
+              py="5"
+              boxSize={280}
               boxShadow="xl"
               _hover={{ boxShadow: "2xl" }}
             >
@@ -97,8 +98,9 @@ const Billing = () => {
             <VStack
               alignItems="start"
               justifyContent="space-around"
-              p="2"
-              boxSize={250}
+              px="8"
+              py="5"
+              boxSize={280}
               boxShadow="xl"
               _hover={{ boxShadow: "2xl" }}
             >
@@ -127,8 +129,9 @@ const Billing = () => {
             <VStack
               alignItems="start"
               justifyContent="space-around"
-              p="2"
-              boxSize={250}
+              px="8"
+              py="5"
+              boxSize={280}
               boxShadow="xl"
               _hover={{ boxShadow: "2xl" }}
             >
@@ -156,9 +159,10 @@ const Billing = () => {
             </VStack>
             <VStack
               alignItems="start"
-             justifyContent="space-around"
-              p="2"
-              boxSize={250}
+              justifyContent="space-around"
+              px="8"
+              py="5"
+              boxSize={280}
               boxShadow="xl"
               _hover={{ boxShadow: "2xl" }}
             >
