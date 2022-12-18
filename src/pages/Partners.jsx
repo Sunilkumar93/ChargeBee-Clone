@@ -17,7 +17,8 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon
+  AccordionIcon,
+  Show,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -98,7 +99,13 @@ const Partners = () => {
   }, [imgInd]);
 
   return (
-    <Box mt="80px" border="1px  solid red">
+    <Box
+      mt="80px"
+      display="flex"
+      flexDir="column"
+      justifyContent="center"
+      w={{ base: "200%", md: "100%" }}
+    >
       <Box
         style={{
           width: "100%",
@@ -108,16 +115,17 @@ const Partners = () => {
           alignItems: "center",
           gap: "40px",
           backgroundColor: "#651Aba",
-
+          margin: "auto",
           color: "white",
         }}
       >
         <Box>
           {" "}
-          <Text fontSize={{ base: "1xl", md: "2xl", lg: "3xl" }} as="b">
+          <Text fontSize={{ base: "xl", md: "2xl", lg: "3xl" }} as="b">
             Become a Partner
           </Text>
         </Box>
+
         <Box>
           {" "}
           <Text fontSize={{ base: "1xl", md: "2xl", lg: "3xl" }} as="b">
@@ -171,6 +179,7 @@ const Partners = () => {
                 pr="14px"
                 mb="12px"
                 style={{ color: "#ffffff", border: "none" }}
+                fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
               >
                 Chargebee Partner Programs
               </Text>
@@ -185,7 +194,11 @@ const Partners = () => {
                 Let's Work Together
               </Text>
             </Box>
-            <Text align="left" mt="20px" fontSize="20px">
+            <Text
+              align="left"
+              mt="20px"
+              fontSize={{ base: "3xl", md: "3xl", lg: "20px" }}
+            >
               Becoming a Chargebee partner enables access to the world of
               subscriptions, bringing increased value to merchants, merchant
               aggregators and marketplaces around the world. Join our Partner
@@ -196,17 +209,12 @@ const Partners = () => {
           <GridItem
             padding="40px"
             width="90%"
-            height={{
-              base: "2050px",
-              small: "1950px",
-              md: "2250px",
-              lg: "1450px",
-              xl: "1650px",
-            }}
+            margin="auto"
+            height={{ base: "104%", md: "104%", lg: "108%" }}
             borderRadius="6px"
             mt="20px"
             bg="white"
-            boxShadow="dark-lg"
+            className="form"
           >
             <Text as="b" align="left">
               Drop your details in to connect with our Partnership Team
@@ -307,6 +315,7 @@ const Partners = () => {
           pr="16px"
           color="#a700f1"
           borderRadius="15px"
+          fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
         >
           Technology Alliance Partner
         </Text>
@@ -315,7 +324,7 @@ const Partners = () => {
           w="max-content"
           mt="10px"
           mb="20px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl", lg: "4xl" }}
           fontWeight="600"
         >
           {" "}
@@ -325,7 +334,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -339,7 +348,7 @@ const Partners = () => {
             margin={{ base: "left", md: "center", lg: "auto" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
             We believe a diverse payments ecosystem helps businesses of all
@@ -430,6 +439,7 @@ const Partners = () => {
           pr="16px"
           color="#a700f1"
           borderRadius="15px"
+          fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
         >
           Technology Alliance Partners
         </Text>
@@ -438,7 +448,7 @@ const Partners = () => {
           w="max-content"
           mt="10px"
           mb="20px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "2xl", lg: "4xl" }}
           fontWeight="600"
         >
           {" "}
@@ -448,7 +458,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -513,7 +523,7 @@ const Partners = () => {
           w="max-content"
           mt="10px"
           mb="20px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl", lg: "4xl" }}
           fontWeight="600"
         >
           {" "}
@@ -523,7 +533,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -580,7 +590,7 @@ const Partners = () => {
           w="max-content"
           mt="10px"
           mb="20px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl", lg: "4xl" }}
           fontWeight="600"
         >
           Channel Resell Partners
@@ -589,7 +599,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -632,7 +642,7 @@ const Partners = () => {
           w="max-content"
           mt="10px"
           mb="20px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl", lg: "4xl" }}
           fontWeight="600"
         >
           Why Sell as a Partner?
@@ -641,7 +651,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -664,7 +674,7 @@ const Partners = () => {
             <Text
               padding="10px"
               fontWeight="600"
-              fontSize="xl"
+              fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
               margin={{ base: "left", md: "center", lg: "auto" }}
               w="max-content"
             >
@@ -674,7 +684,7 @@ const Partners = () => {
               mt="20px"
               margin={{ base: "left", md: "center", lg: "auto" }}
               color="#64648c"
-              fontSize="18px"
+              fontSize={{ base: "2xl", md: "2xl", lg: "18px" }}
               w={{ base: "100%", md: "90%", lg: "80%" }}
               align={{ base: "left", md: "left", lg: "center" }}
             >
@@ -693,7 +703,7 @@ const Partners = () => {
             <Text
               padding="10px"
               fontWeight="600"
-              fontSize="xl"
+              fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
               margin={{ base: "left", md: "center", lg: "auto" }}
               w="max-content"
               mt="10px"
@@ -704,7 +714,7 @@ const Partners = () => {
             <Text
               margin={{ base: "left", md: "center", lg: "auto" }}
               color="#64648c"
-              fontSize="18px"
+              fontSize={{ base: "2xl", md: "2xl", lg: "18px" }}
               w={{ base: "100%", md: "90%", lg: "80%" }}
               align={{ base: "left", md: "left", lg: "center" }}
             >
@@ -723,7 +733,7 @@ const Partners = () => {
             <Text
               padding="10px"
               fontWeight="600"
-              fontSize="xl"
+              fontSize={{ base: "2xl", md: "2xl", lg: "xl" }}
               margin={{ base: "left", md: "center", lg: "auto" }}
               w="max-content"
               mt="10px"
@@ -734,7 +744,7 @@ const Partners = () => {
             <Text
               margin={{ base: "left", md: "center", lg: "auto" }}
               color="#64648c"
-              fontSize="18px"
+              fontSize={{ base: "2xl", md: "2xl", lg: "18px" }}
               w={{ base: "100%", md: "90%", lg: "80%" }}
               align={{ base: "left", md: "left", lg: "center" }}
             >
@@ -742,6 +752,7 @@ const Partners = () => {
             </Text>
           </Box>
         </SimpleGrid>
+
         <Box align="center" m="60px">
           <button className="button" display="flex">
             Become A Partner{" "}
@@ -758,49 +769,57 @@ const Partners = () => {
         <Text
           align={{ base: "left", md: "left", lg: "center" }}
           margin={{ base: "left", md: "center", lg: "auto" }}
-          fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "2xl", lg: "4xl" }}
           fontWeight="600"
-          p="40px"
-          w={{ base: "100%", md: "90%", lg: "50%" }}
+          p="20px"
+          w={{ base: "100%", md: "100%", lg: "50%" }}
         >
           See how these partners achieved more with Chargebee
         </Text>
       </Box>
-      <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 2 }}
-        ml={{ base: "30px" }}
-        w="80%"
-        h="6cm"
-        gap="40px"
-        align={{ base: "auto", lg: "center" }}
-        margin={{ lg: "auto" }}
+      <Box
+        mb={{ base: "450px", sm: "400px", md: "40px", lg: "50px", xl: "50px" }}
       >
-        <Box className="container_iframe">
-          <iframe
-            className="responsive_iframe"
-            height="315"
-            width="500"
-            src="https://www.youtube.com/embed/VuemPP0sdcQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </Box>
-        <Box className="container_iframe">
-          <iframe
-            className="responsive_iframe"
-            height="315"
-            width="500"
-            src="https://www.youtube.com/embed/2vtGuSSMyjo?playlist=2vtGuSSMyjo&amp;loop=1"
-            frameborder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen=""
-          ></iframe>
-        </Box>
-      </SimpleGrid>
+        <SimpleGrid
+          columns={{ base: 1, sm: 2, md: 2, lg: 2 }}
+          ml={{ base: "30px" }}
+          w="80%"
+          h="6cm"
+          gap="40px"
+          align={{ base: "auto", lg: "center" }}
+          margin="auto"
+        >
+          <Box className="container_iframe">
+            <iframe
+              className="responsive_iframe"
+              height="315"
+              width="500"
+              src="https://www.youtube.com/embed/VuemPP0sdcQ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Box>
+          <Box className="container_iframe">
+            <iframe
+              className="responsive_iframe"
+              height="315"
+              width="500"
+              src="https://www.youtube.com/embed/2vtGuSSMyjo?playlist=2vtGuSSMyjo&amp;loop=1"
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""
+            ></iframe>
+          </Box>
+        </SimpleGrid>
+      </Box>
 
-      <Box align="center" mt="150px">
+      <Box
+        align="center"
+        mt={{ base: "150px", sm: "180px", md: "100px", lg: "50px", xl: "50px" }}
+        mb={{ base: "80px" }}
+      >
         <button className="button" display="flex">
           Become A Partner{" "}
           <Box w="30px" mt="-28px" ml="200px" className="rightIcon">
@@ -886,7 +905,7 @@ const Partners = () => {
           w={{ lg: "45%" }}
           p="20px"
           mb="20px"
-          fontSize={{ base: "xl", md: "3xl", lg: "5xl" }}
+          fontSize={{ base: "3xl", md: "3xl", lg: "5xl" }}
           fontWeight="600"
           align="center"
         >
@@ -895,7 +914,7 @@ const Partners = () => {
         <Box mb="26px">
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
-            fontSize="22px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "22px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -930,7 +949,7 @@ const Partners = () => {
           </Text>
         </Box>
 
-        <Box w="70%">
+        <Box w={{ base: "90%", md: "90%", lg: "75%" }}>
           <Accordion allowMultiple>
             <AccordionItem p="20px" boxShadow="2xl" mb="30px">
               <h2>
@@ -1069,7 +1088,7 @@ const Partners = () => {
           w="max-content"
           mt="30px"
           mb="50px"
-          fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+          fontSize={{ base: "3xl", md: "2xl", lg: "4xl" }}
           fontWeight="600"
         >
           Chargebee Marketplace
@@ -1078,7 +1097,7 @@ const Partners = () => {
           <Text
             margin={{ base: "left", md: "center", lg: "auto" }}
             color="#64648c"
-            fontSize="18px"
+            fontSize={{ base: "3xl", md: "2xl", lg: "18px" }}
             w={{ base: "100%", md: "90%", lg: "62%" }}
             align={{ base: "left", md: "left", lg: "center" }}
           >
@@ -1099,46 +1118,91 @@ const Partners = () => {
         </Box>
 
         <Box display="flex">
-          {/* <Box w='20%' h='100px'>  <Box className='slideshow' mt='20px' mb='30px'>
-                  <img src={PopularBrandimages[imgInd]} alt={imgInd} />
-                 <Box className="slider">{PopularBrandimages.map((_, el) => (
-          <Box key={el} onClick={() => setImgInd(el)} className={imgInd === el ? "active" : ""}/>))}
-         </Box>
-        </Box>
-          </Box> */}
-          <Box w="100%" className="bottom_scroll" display="flex">
-            <Box w="100px">
-              {" "}
-              <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo1.png"></Image>
+          <Box w="10%" h="100px">
+            {" "}
+            <Box className="slideshow" mt="20px" mb="30px">
+              <img src={PopularBrandimages[imgInd]} alt={imgInd} />
+              <Box className="slider">
+                {PopularBrandimages.map((_, el) => (
+                  <Box
+                    key={el}
+                    onClick={() => setImgInd(el)}
+                    className={imgInd === el ? "active" : ""}
+                  />
+                ))}
+              </Box>
             </Box>
-            <Box w="100px">
+          </Box>
+          <Box className="slider">
+            {" "}
+            <Box w="100%" display="flex" className="slider_track">
+              <Box className="slide">
+                {" "}
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo1.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo2.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo3.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo4.png"></Image>
+              </Box>
+              <Box className="slide">
+                {" "}
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo5.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo6.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo7.png"></Image>
+              </Box>
+              <Box className="slide">
+                {" "}
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo8.png"></Image>
+              </Box>
+              <Box className="slide">
+                {" "}
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo9.png"></Image>
+              </Box>
+              <Box className="slide">
+                {" "}
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo10.png"></Image>
+              </Box>
+              <Box className="slide">
+                <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo1.png"></Image>
+              </Box>
+            </Box>
+            <Box className="slide">
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo2.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo3.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo4.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               {" "}
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo5.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo6.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo7.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               {" "}
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo8.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               {" "}
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo9.png"></Image>
             </Box>
-            <Box w="100px">
+            <Box className="slide">
               {" "}
               <Image src="https://webstatic.chargebee.com/assets/web/543/images/partners/marketplace-logos/logo10.png"></Image>
             </Box>
