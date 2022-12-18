@@ -27,10 +27,10 @@ const HomeSlider = () => {
     >
       <Swiper
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 5500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
@@ -72,14 +72,16 @@ const HomeSlider = () => {
                 alignItems="start"
                 zIndex={9}
                 position="absolute"
-                top="35%"
-                right="8%"
+                top="30%"
+                right="5%"
               >
                 <Box>
-                  <Text fontWeight={600}>José Bolaños</Text>
+                  <Text fontSize="14px" fontWeight={600}>
+                    José Bolaños
+                  </Text>
                 </Box>
                 <Box>
-                  <Text>CTO - Slidebean</Text>
+                  <Text fontSize="12px">CTO - Slidebean</Text>
                 </Box>
               </VStack>
             </Box>
@@ -108,6 +110,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -115,6 +118,26 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/paul-kapsner.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                w="120px"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="2%"
+                textAlign="start"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Pual Kpsner
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="10px">
+                    Director, Finance & Operations - Superfoods{" "}
+                  </Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -141,6 +164,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -148,6 +172,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/rahul-gandhi.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Rahul Gandhi
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CEO - MakeSpace</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -174,6 +214,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -181,6 +222,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/antoine-louiset.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Antoine Louiset,
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CTO - Yousign</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -207,6 +264,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -214,6 +272,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/debbie-barrafato.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Debbie Barrafato,
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CFO - Rise Vision</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>

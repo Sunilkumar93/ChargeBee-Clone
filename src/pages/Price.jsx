@@ -10,35 +10,33 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { CheckBox } from "@mui/icons-material";
+
 import React, { useState } from "react";
 
 import styles from "./Pricestyles.module.css";
-  const monthly = {
-    USD: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
-    EUR: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
-    GBP: { launch: 249, launchrev: "40K", rise: 449, riserev: "80K" },
-    AUD: { launch: 419, launchrev: "70K", rise: 799, riserev: "130K" },
-    CAD: { launch: 399, launchrev: "60K", rise: 699, riserev: "130K" },
-    INR: { launch: "23,890", launchrev: "50L", rise: "47,890", riserev: "80L" },
-  };
-  const annual = {
-    USD: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
-    EUR: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
-    GBP: { launch: 199, launchrev: "480K", rise: 379, riserev: "960K" },
-    AUD: { launch: 359, launchrev: "840K", rise: 729, riserev: "1.56M" },
-    CAD: { launch: 329, launchrev: "720K", rise: 599, riserev: "1.56M" },
-    INR: {
-      launch: "19,915",
-      launchrev: "4.8crores",
-      rise: "43,915",
-      riserev: "9.6crores",
-    },
-  };
+const monthly = {
+  USD: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
+  EUR: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
+  GBP: { launch: 249, launchrev: "40K", rise: 449, riserev: "80K" },
+  AUD: { launch: 419, launchrev: "70K", rise: 799, riserev: "130K" },
+  CAD: { launch: 399, launchrev: "60K", rise: 699, riserev: "130K" },
+  INR: { launch: "23,890", launchrev: "50L", rise: "47,890", riserev: "80L" },
+};
+const annual = {
+  USD: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
+  EUR: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
+  GBP: { launch: 199, launchrev: "480K", rise: 379, riserev: "960K" },
+  AUD: { launch: 359, launchrev: "840K", rise: 729, riserev: "1.56M" },
+  CAD: { launch: 329, launchrev: "720K", rise: 599, riserev: "1.56M" },
+  INR: {
+    launch: "19,915",
+    launchrev: "4.8crores",
+    rise: "43,915",
+    riserev: "9.6crores",
+  },
+};
 
 const Price = () => {
-
-
   const [period, setPeriod] = useState("annual");
   const [country, setCountry] = useState("INR");
   const mystyle = {
@@ -48,12 +46,12 @@ const Price = () => {
     paddingBottom: "20px",
   };
 
-  const handlePeriod=(value)=>{
+  const handlePeriod = (value) => {
     setPeriod(value);
-  }
-  let handleCountry=(value)=>{
+  };
+  let handleCountry = (value) => {
     setCountry(value);
-  }
+  };
   return (
     <>
       <div style={mystyle}>
@@ -88,14 +86,14 @@ const Price = () => {
             <div class={styles.container}>
               <div
                 class={styles.one}
-                id={period == "annual" ? styles.two : null}
+                id={period === "annual" ? styles.two : null}
                 onClick={() => handlePeriod("annual")}
               >
                 ANNUAL
               </div>
               <div
                 class={styles.one}
-                id={period == "monthly" ? styles.two : null}
+                id={period === "monthly" ? styles.two : null}
                 onClick={() => handlePeriod("monthly")}
               >
                 MONTHLY
@@ -104,42 +102,42 @@ const Price = () => {
             <div class={styles.container1}>
               <div
                 class={styles.one}
-                id={country == "USD" ? styles.two : null}
+                id={country === "USD" ? styles.two : null}
                 onClick={() => handleCountry("USD")}
               >
                 USD
               </div>
               <div
                 class={styles.one}
-                id={country == "EUR" ? styles.two : null}
+                id={country === "EUR" ? styles.two : null}
                 onClick={() => handleCountry("EUR")}
               >
                 EUR
               </div>
               <div
                 class={styles.one}
-                id={country == "GBP" ? styles.two : null}
+                id={country === "GBP" ? styles.two : null}
                 onClick={() => handleCountry("GBP")}
               >
                 GBP
               </div>
               <div
                 class={styles.one}
-                id={country == "AUD" ? styles.two : null}
+                id={country === "AUD" ? styles.two : null}
                 onClick={() => handleCountry("AUD")}
               >
                 AUD
               </div>
               <div
                 class={styles.one}
-                id={country == "CAD" ? styles.two : null}
+                id={country === "CAD" ? styles.two : null}
                 onClick={() => handleCountry("CAD")}
               >
                 CAD
               </div>
               <div
                 class={styles.one}
-                id={country == "INR" ? styles.two : null}
+                id={country === "INR" ? styles.two : null}
                 onClick={() => handleCountry("INR")}
               >
                 INR
@@ -196,13 +194,13 @@ const Price = () => {
               0/mo
             </Heading>
             <Text fontWeight="semibold" mb="10px">
-              {period == "annual" ? "billed annually" : " "}
+              {period === "annual" ? "billed annually" : " "}
             </Text>
             <Text fontSize="14" h="42px">
               for your first{" "}
               <strong>
                 {country}{" "}
-                {period == "annual"
+                {period === "annual"
                   ? annual[country].riserev
                   : monthly[country].riserev}
               </strong>{" "}
@@ -269,19 +267,19 @@ const Price = () => {
               {country}
             </Heading>
             <Heading as="h1" mb="5px" fontWeight="medium">
-              {period == "annual"
+              {period === "annual"
                 ? annual[country].launch
                 : monthly[country].launch}
               /mo
             </Heading>
             <Text fontWeight="semibold" mb="10px">
-              {period == "annual" ? "billed annually" : " "}
+              {period === "annual" ? "billed annually" : " "}
             </Text>
             <Text fontSize="14">
               includes{" "}
               <strong>
                 {country}{" "}
-                {period == "annual"
+                {period === "annual"
                   ? annual[country].launchrev
                   : monthly[country].launchrev}
               </strong>{" "}
@@ -350,19 +348,19 @@ const Price = () => {
               {country}
             </Heading>
             <Heading as="h1" mb="5px" fontWeight="medium">
-              {period == "annual"
+              {period === "annual"
                 ? annual[country].launch
                 : monthly[country].launch}
               /mo
             </Heading>
             <Text fontWeight="semibold" mb="10px">
-              {period == "annual" ? "billed annually" : " "}
+              {period === "annual" ? "billed annually" : " "}
             </Text>
             <Text fontSize="14">
               includes{" "}
               <strong>
                 {country}{" "}
-                {period == "annual"
+                {period === "annual"
                   ? annual[country].riserev
                   : monthly[country].riserev}
               </strong>{" "}
@@ -428,7 +426,7 @@ const Price = () => {
               Custom
             </Heading>
             <Text fontWeight="semibold" mb="10px">
-              {period == "annual" ? "billed annually" : " "}
+              {period === "annual" ? "billed annually" : " "}
             </Text>
             <Text fontSize="14">
               Get a quote tailored to your requirements.
@@ -495,13 +493,23 @@ const Price = () => {
           <Center>See how our plans compare</Center>
         </Heading>
       </Box>
-      <Flex gap="60px" maxWidth="1200px" margin="auto" mb="80px" flexWrap="wrap">
+      <Flex
+        gap="60px"
+        maxWidth="1200px"
+        margin="auto"
+        mb="80px"
+        flexWrap="wrap"
+      >
         <Box maxW="500px">
-          <Image
-            src="https://webstatic.chargebee.com/assets/web/543/images/pricings/plan.svg"
-          />
+          <Image src="https://webstatic.chargebee.com/assets/web/543/images/pricings/plan.svg" />
         </Box>
-        <Box maxW="500px" alignContent="" textAlign="left" margin="auto" p="20px">
+        <Box
+          maxW="500px"
+          alignContent=""
+          textAlign="left"
+          margin="auto"
+          p="20px"
+        >
           <Heading size="lg" mb="10px" fontWeight="normal">
             {" "}
             For Early Stage Startups
@@ -579,7 +587,13 @@ const Price = () => {
               />
             </Flex>
           </Box>
-          <Box shadow="xl" padding="20px" lineHeight="70px" margin="auto" maxWidth="500px">
+          <Box
+            shadow="xl"
+            padding="20px"
+            lineHeight="70px"
+            margin="auto"
+            maxWidth="500px"
+          >
             <Input
               backgroundImage="https://webstatic.chargebee.com/assets/web/543/images/schedule-a-demo/icons/user.svg"
               placeholder="   First Name"
@@ -1283,7 +1297,7 @@ const Price = () => {
             <Heading size="sm" fontWeight="500" mt="10px">
               What problem can Chargebee solve for you?
             </Heading>
-            <Input height="80px" mt="5" border='2px'></Input>
+            <Input height="80px" mt="5" border="2px"></Input>
             <Box
               h="65px"
               w="180px"

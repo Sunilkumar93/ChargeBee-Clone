@@ -366,21 +366,21 @@ const Product = () => {
           <Text>Preferred Partners</Text>
         </Box>
         <Flex gap={1}>
-          <Link textDecoration="underline"> Stripe,</Link>
-          <Link textDecoration="underline">Braintree, </Link>
-          <Link textDecoration="underline">Checkout.com, </Link>
-          <Link textDecoration="underline">GoCardless, </Link>
-          <Link textDecoration="underline">Paypal,</Link>
-          <Text textDecoration="none">and</Text>
-          <Link textDecoration="underline">27 other payment gateways.</Link>
+          <Link href="#" textDecoration="underline"> Stripe,</Link>
+          <Link href="#" textDecoration="underline">Braintree, </Link>
+          <Link href="#" textDecoration="underline">Checkout.com, </Link>
+          <Link href="#" textDecoration="underline">GoCardless, </Link>
+          <Link href="#" textDecoration="underline">Paypal,</Link>
+          <Text  textDecoration="none">and</Text>
+          <Link href="#" textDecoration="underline">27 other payment gateways.</Link>
         </Flex>
         <Flex gap={1}>
           <Text textDecoration="none">Seamless integration with </Text>
-          <Link textDecoration="underline"> Xero,</Link>
-          <Link textDecoration="underline"> QuickBooks </Link>
-          <Link textDecoration="underline">Zendesk, </Link>
-          <Link textDecoration="underline"> Salesforce </Link>
-          <Link textDecoration="underline">+ 18 more.</Link>
+          <Link href="#" textDecoration="underline"> Xero,</Link>
+          <Link href="#" textDecoration="underline"> QuickBooks </Link>
+          <Link href="#" textDecoration="underline">Zendesk, </Link>
+          <Link href="#" textDecoration="underline"> Salesforce </Link>
+          <Link href="#" textDecoration="underline">+ 18 more.</Link>
         </Flex>
         <Box><Text color="blue"fontWeight={600} fontSize="20px" >Explore all features {">"}</Text></Box>
       </VStack>
