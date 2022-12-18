@@ -2,23 +2,58 @@ import { ArrowForwardIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import {
   Box,
   Center,
+  Checkbox,
   Flex,
   Heading,
   Image,
   Input,
+  Link,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import { CheckBox } from "@mui/icons-material";
+import React, { useState } from "react";
 
 import styles from "./Pricestyles.module.css";
+  const monthly = {
+    USD: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
+    EUR: { launch: 299, launchrev: "50K", rise: 599, riserev: "100K" },
+    GBP: { launch: 249, launchrev: "40K", rise: 449, riserev: "80K" },
+    AUD: { launch: 419, launchrev: "70K", rise: 799, riserev: "130K" },
+    CAD: { launch: 399, launchrev: "60K", rise: 699, riserev: "130K" },
+    INR: { launch: "23,890", launchrev: "50L", rise: "47,890", riserev: "80L" },
+  };
+  const annual = {
+    USD: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
+    EUR: { launch: 249, launchrev: "600K", rise: 549, riserev: "1.2M" },
+    GBP: { launch: 199, launchrev: "480K", rise: 379, riserev: "960K" },
+    AUD: { launch: 359, launchrev: "840K", rise: 729, riserev: "1.56M" },
+    CAD: { launch: 329, launchrev: "720K", rise: 599, riserev: "1.56M" },
+    INR: {
+      launch: "19,915",
+      launchrev: "4.8crores",
+      rise: "43,915",
+      riserev: "9.6crores",
+    },
+  };
 
 const Price = () => {
-  let mystyle = {
+
+
+  const [period, setPeriod] = useState("annual");
+  const [country, setCountry] = useState("INR");
+  const mystyle = {
     background:
       "linear-gradient(100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8%)",
     paddingTop: "100px",
     paddingBottom: "20px",
   };
+
+  const handlePeriod=(value)=>{
+    setPeriod(value);
+  }
+  let handleCountry=(value)=>{
+    setCountry(value);
+  }
   return (
     <>
       <div style={mystyle}>
@@ -32,7 +67,7 @@ const Price = () => {
           <Heading fontSize="58px" mb="30px" fontWeight="medium" mt="30px">
             Find a plan that's right for you
           </Heading>
-          <Flex mb="50px">
+          <Flex mb="50px" flexWrap="wrap">
             <Text fontSize="18px">
               Or simply leverage the expertise of our consultation team.
             </Text>
@@ -51,16 +86,64 @@ const Price = () => {
           </Flex>
           <div id={styles.btncontain}>
             <div class={styles.container}>
-              <div class={styles.one}>ANNUAL</div>
-              <div class={styles.one}>MONTHLY</div>
+              <div
+                class={styles.one}
+                id={period == "annual" ? styles.two : null}
+                onClick={() => handlePeriod("annual")}
+              >
+                ANNUAL
+              </div>
+              <div
+                class={styles.one}
+                id={period == "monthly" ? styles.two : null}
+                onClick={() => handlePeriod("monthly")}
+              >
+                MONTHLY
+              </div>
             </div>
             <div class={styles.container1}>
-              <div class={styles.one}>USD</div>
-              <div class={styles.one}>EUR</div>
-              <div class={styles.one}>GBP</div>
-              <div class={styles.one}>AUD</div>
-              <div class={styles.one}>CAD</div>
-              <div class={styles.one}>INR</div>
+              <div
+                class={styles.one}
+                id={country == "USD" ? styles.two : null}
+                onClick={() => handleCountry("USD")}
+              >
+                USD
+              </div>
+              <div
+                class={styles.one}
+                id={country == "EUR" ? styles.two : null}
+                onClick={() => handleCountry("EUR")}
+              >
+                EUR
+              </div>
+              <div
+                class={styles.one}
+                id={country == "GBP" ? styles.two : null}
+                onClick={() => handleCountry("GBP")}
+              >
+                GBP
+              </div>
+              <div
+                class={styles.one}
+                id={country == "AUD" ? styles.two : null}
+                onClick={() => handleCountry("AUD")}
+              >
+                AUD
+              </div>
+              <div
+                class={styles.one}
+                id={country == "CAD" ? styles.two : null}
+                onClick={() => handleCountry("CAD")}
+              >
+                CAD
+              </div>
+              <div
+                class={styles.one}
+                id={country == "INR" ? styles.two : null}
+                onClick={() => handleCountry("INR")}
+              >
+                INR
+              </div>
             </div>
           </div>
           <Flex gap="30px" mt="30px" textAlign="justify">
@@ -103,18 +186,27 @@ const Price = () => {
           </Flex>
         </Box>
       </div>
-      <Box background="#f8f8f8" marginBottom="100px" mt="60px">
+      <Box background="#f8f8f8" marginBottom="100px" mt="30px">
         <Flex maxWidth="1100px" margin="auto" gap="60px">
           <Box w="250px" textAlign="left">
             <Heading size="md" color="#4300A3" mb="20px">
-              INR
+              {country || "INR"}
             </Heading>
-            <Heading as="h1" mb="50px" fontWeight="medium">
+            <Heading as="h1" mb="5px" fontWeight="medium">
               0/mo
             </Heading>
-            <Text fontSize="14">
-              for your first INR 80L in revenue
-              <span> What happens when I hit INR 80L?</span>
+            <Text fontWeight="semibold" mb="10px">
+              {period == "annual" ? "billed annually" : " "}
+            </Text>
+            <Text fontSize="14" h="42px">
+              for your first{" "}
+              <strong>
+                {country}{" "}
+                {period == "annual"
+                  ? annual[country].riserev
+                  : monthly[country].riserev}
+              </strong>{" "}
+              in revenue
             </Text>
             <Box
               h="60px"
@@ -174,14 +266,27 @@ const Price = () => {
           </Box>
           <Box w="250px" textAlign="left">
             <Heading size="md" color="#4300A3" mb="20px">
-              INR
+              {country}
             </Heading>
-            <Heading as="h1" mb="50px" fontWeight="medium">
-              0/mo
+            <Heading as="h1" mb="5px" fontWeight="medium">
+              {period == "annual"
+                ? annual[country].launch
+                : monthly[country].launch}
+              /mo
             </Heading>
+            <Text fontWeight="semibold" mb="10px">
+              {period == "annual" ? "billed annually" : " "}
+            </Text>
             <Text fontSize="14">
-              for your first INR 80L in revenue
-              <span>What happens when I hit INR 80L?</span>
+              includes{" "}
+              <strong>
+                {country}{" "}
+                {period == "annual"
+                  ? annual[country].launchrev
+                  : monthly[country].launchrev}
+              </strong>{" "}
+              in revenue
+              <strong> 0.6%</strong> of overage revenue
             </Text>
             <Box
               h="60px"
@@ -242,14 +347,27 @@ const Price = () => {
           </Box>
           <Box w="250px" textAlign="left">
             <Heading size="md" color="#4300A3" mb="20px">
-              INR
+              {country}
             </Heading>
-            <Heading as="h1" mb="50px" fontWeight="medium">
-              0/mo
+            <Heading as="h1" mb="5px" fontWeight="medium">
+              {period == "annual"
+                ? annual[country].launch
+                : monthly[country].launch}
+              /mo
             </Heading>
+            <Text fontWeight="semibold" mb="10px">
+              {period == "annual" ? "billed annually" : " "}
+            </Text>
             <Text fontSize="14">
-              for your first INR 80L in revenue
-              <span>What happens when I hit INR 80L?</span>
+              includes{" "}
+              <strong>
+                {country}{" "}
+                {period == "annual"
+                  ? annual[country].riserev
+                  : monthly[country].riserev}
+              </strong>{" "}
+              in revenue
+              <strong> 0.75%</strong> of overage revenue
             </Text>
             <Box
               h="60px"
@@ -304,14 +422,16 @@ const Price = () => {
           </Box>
           <Box w="250px" textAlign="left">
             <Heading size="md" color="#4300A3" mb="20px">
-              INR
+              {country || "INR"}
             </Heading>
-            <Heading as="h1" mb="50px" fontWeight="medium">
-              0/mo
+            <Heading as="h1" mb="5px" fontWeight="medium">
+              Custom
             </Heading>
+            <Text fontWeight="semibold" mb="10px">
+              {period == "annual" ? "billed annually" : " "}
+            </Text>
             <Text fontSize="14">
-              for your first INR 80L in revenue
-              <span>What happens when I hit INR 80L?</span>
+              Get a quote tailored to your requirements.
             </Text>
             <Box
               h="60px"
@@ -375,14 +495,13 @@ const Price = () => {
           <Center>See how our plans compare</Center>
         </Heading>
       </Box>
-      <Flex gap="60px" maxWidth="1100px" margin="auto" mb="80px">
-        <Box>
+      <Flex gap="60px" maxWidth="1200px" margin="auto" mb="80px" flexWrap="wrap">
+        <Box maxW="500px">
           <Image
             src="https://webstatic.chargebee.com/assets/web/543/images/pricings/plan.svg"
-            w="500px"
           />
         </Box>
-        <Box w="600px" alignContent="" textAlign="left">
+        <Box maxW="500px" alignContent="" textAlign="left" margin="auto" p="20px">
           <Heading size="lg" mb="10px" fontWeight="normal">
             {" "}
             For Early Stage Startups
@@ -413,8 +532,8 @@ const Price = () => {
         paddingTop="50px"
         paddingBottom="80px"
       >
-        <Flex gap="60px" maxWidth="1100px" margin="auto">
-          <Box width="600px" textAlign="left">
+        <Flex gap="60px" maxWidth="1200px" margin="auto" flexWrap="wrap">
+          <Box maxWidth="600px" textAlign="left" margin="auto" p="5">
             <Heading size="xl" fontWeight="medium" mb="30px">
               We've helped thousands of subscription businesses streamline their
               billing workflow
@@ -460,7 +579,7 @@ const Price = () => {
               />
             </Flex>
           </Box>
-          <Box shadow="xl" padding="20px" lineHeight="70px">
+          <Box shadow="xl" padding="20px" lineHeight="70px" margin="auto" maxWidth="500px">
             <Input
               backgroundImage="https://webstatic.chargebee.com/assets/web/543/images/schedule-a-demo/icons/user.svg"
               placeholder="   First Name"
@@ -1150,9 +1269,44 @@ const Price = () => {
               borderBottomColor="#dde3ec"
               backgroundPosition="left"
             />
-            <Heading size="sm" fontWeight="medium" mt="10px">
+            <Heading size="sm" fontWeight="500" mt="10px">
               Is your company headquartered in India?
             </Heading>
+            <Flex gap={10}>
+              <Box>
+                <Checkbox>Yes</Checkbox>
+              </Box>
+              <Box>
+                <Checkbox>No</Checkbox>
+              </Box>
+            </Flex>
+            <Heading size="sm" fontWeight="500" mt="10px">
+              What problem can Chargebee solve for you?
+            </Heading>
+            <Input height="80px" mt="5" border='2px'></Input>
+            <Box
+              h="65px"
+              w="180px"
+              bg="linear-gradient(100.96deg, #4300A3 33.34%, #6100BB 71.36%, #A700F1 104.8%)"
+              color="white"
+              borderRadius="5"
+              mt="40px"
+            >
+              <Text>
+                <Center>Schedule a Demo</Center>
+              </Text>
+              <ArrowForwardIcon color="white" />
+            </Box>
+            <Text
+              lineHeight="25px"
+              fontWeight="200"
+              fontSize="10px"
+              mt="5"
+              maxW="300px"
+            >
+              By clicking on Schedule a Demo, you acknowledge having read our
+              <Link color="blue"> Privacy Notice</Link>
+            </Text>
           </Box>
         </Flex>
       </Box>
