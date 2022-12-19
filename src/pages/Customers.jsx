@@ -62,6 +62,7 @@ const Customers = () => {
           <div style={{display:"flex",margin:"0px",alignItems:"center"}} >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/freedom-fred.png" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",margin:"20px"}} />  <label>Fred Stutzman, CEO, Freedom</label>
          </div>
+         
           </div>
          </div>
       </div>
