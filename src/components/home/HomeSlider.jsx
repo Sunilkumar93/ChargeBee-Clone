@@ -11,12 +11,15 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const HomeSlider = () => {
   return (
-    <Box position="relative">
+    <Box
+      position="relative"
+      h={{ base: "1050px", md: "450px", lg: "450px" }}
+      overflow="hidden"
+    >
       <Swiper
-        spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 5500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -26,17 +29,32 @@ const HomeSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Flex justifyContent="space-between">
-            <Box w="45%">
-              <Heading fontSize="2.62rem" textAlign="start">
+          <Flex
+            justifyContent="space-between"
+            h={{ base: "40%", md: "100%", lg: "100%" }}
+            flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+            overflow="hidden"
+          >
+            <Box w={{ base: "100%", md: "40%", lg: "45%" }}>
+              <Heading
+                fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
+                textAlign="start"
+              >
                 The subscription management platform that enabled Slidebean to
                 slide into 30+ countries.
               </Heading>
             </Box>
 
-            <Box w="30%">
+            <Box
+              w={{ base: "100%", md: "50%", lg: "40%" }}
+              h={{ base: "70%", md: "70%", lg: "70%" }}
+              overflow="hidden"
+              borderRadius={90}
+              bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+            >
               <Image
-                boxSize={"100%"}
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
                 alt="image"
               />
@@ -44,88 +62,163 @@ const HomeSlider = () => {
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-          <Flex justifyContent="space-between">
-            <Box w="45%">
-              <Heading fontSize="2.62rem" textAlign="start">
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+          <Flex
+            justifyContent="space-between"
+            h={{ base: "40%", md: "100%", lg: "100%" }}
+            flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+            overflow="hidden"
+          >
+            <Box w={{ base: "100%", md: "40%", lg: "45%" }}>
+              <Heading
+                fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
+                textAlign="start"
+              >
+                The billing platform that gives Superfoods the freedom to test,
+                iterate, and roll-back.
               </Heading>
             </Box>
 
-            <Box w="30%">
+            <Box
+              w={{ base: "100%", md: "50%", lg: "40%" }}
+              h={{ base: "70%", md: "70%", lg: "70%" }}
+              overflow="hidden"
+              borderRadius={90}
+              bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+            >
               <Image
-                boxSize={"100%"}
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+               w="70%"
+               h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/paul-kapsner.png"
                 alt="image"
               />
             </Box>
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-          <Flex justifyContent="space-between">
-            <Box w="45%">
-              <Heading fontSize="2.62rem" textAlign="start">
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+          <Flex
+            justifyContent="space-between"
+            h={{ base: "40%", md: "100%", lg: "100%" }}
+            flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+            overflow="hidden"
+          >
+            <Box w={{ base: "100%", md: "40%", lg: "45%" }}>
+              <Heading
+                fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
+                textAlign="start"
+              >
+                The revenue engine that powered MakeSpace to launch a B2B model
+                overnight.
               </Heading>
             </Box>
 
-            <Box w="30%">
+            <Box
+              w={{ base: "100%", md: "50%", lg: "40%" }}
+              h={{ base: "70%", md: "70%", lg: "70%" }}
+              overflow="hidden"
+              borderRadius={90}
+              bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+            >
               <Image
-                boxSize={"100%"}
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+                w="70%"
+                h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/rahul-gandhi.png"
                 alt="image"
               />
             </Box>
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-          <Flex justifyContent="space-between">
-            <Box w="45%">
-              <Heading fontSize="2.62rem" textAlign="start">
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+          <Flex
+            justifyContent="space-between"
+            h={{ base: "40%", md: "100%", lg: "100%" }}
+            flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+            overflow="hidden"
+          >
+            <Box w={{ base: "100%", md: "40%", lg: "45%" }}>
+              <Heading
+                fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
+                textAlign="start"
+              >
+                The revenue toolkit that allowed Yousign to enter a new market
+                that now drives 15% MRR.
               </Heading>
             </Box>
 
-            <Box w="30%">
+            <Box
+              w={{ base: "100%", md: "50%", lg: "40%" }}
+              h={{ base: "70%", md: "70%", lg: "70%" }}
+              overflow="hidden"
+              borderRadius={90}
+              bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+            >
               <Image
-                boxSize={"100%"}
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+               w="70%"
+               h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/antoine-louiset.png"
                 alt="image"
               />
             </Box>
           </Flex>
         </SwiperSlide>
         <SwiperSlide>
-          <Flex justifyContent="space-between">
-            <Box w="45%">
-              <Heading fontSize="2.62rem" textAlign="start">
-                The subscription management platform that enabled Slidebean to
-                slide into 30+ countries.
+          <Flex
+            justifyContent="space-between"
+            h={{ base: "40%", md: "100%", lg: "100%" }}
+            flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+            overflow="hidden"
+          >
+            <Box w={{ base: "100%", md: "40%", lg: "45%" }}>
+              <Heading
+                fontSize={{ base: "1.7rem", md: "2rem", lg: "2.62rem" }}
+                textAlign="start"
+              >
+                The infrastructure that allows Rise Vision to ask “What Does
+                This Make Possible?”
               </Heading>
             </Box>
 
-            <Box w="30%">
+            <Box
+              w={{ base: "100%", md: "50%", lg: "40%" }}
+              h={{ base: "70%", md: "70%", lg: "70%" }}
+              overflow="hidden"
+              borderRadius={90}
+              bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+            >
               <Image
-                boxSize={"100%"}
-                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
+                w="70%"
+                h="100%"
+                src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/debbie-barrafato.png"
                 alt="image"
               />
             </Box>
           </Flex>
         </SwiperSlide>
       </Swiper>
-      <Box w="45%" position="absolute" top="55%" left="0%" zIndex="1">
-        <Text color="#64648c" mb="3rem" mr="8rem">
+      <Box
+        w={{ base: "100%", md: "40%", lg: "45%" }}
+        position="absolute"
+        top={{ base: "73%", md: "55%", lg: "50%" }}
+        left="0%"
+        zIndex="1"
+      >
+        <Text
+          color="#64648c"
+          mb={{ base: "2rem", md: "0.8rem", lg: "3rem" }}
+          mr={{ base: "1rem", md: "0", lg: "8rem" }}
+        >
           Chargebee is the subscription billing and revenue management platform
           that lets you solve for your today, and scale for your tomorrow.
         </Text>
-        <Flex w="60%" justifyContent="space-between">
+        <Flex
+          w="100%"
+          gap="5"
+          flexDirection={{ base: "column", md: "row", lg: "row" }}
+          pr={{ base: "5", md: "0", lg: "0" }}
+        >
           <Button
+            p={6}
             rightIcon={<ArrowForwardIcon />}
             colorScheme="none"
-            
             borderRadius={50}
             fontSize="1rem"
             fontWeight="600"
@@ -136,10 +229,10 @@ const HomeSlider = () => {
             Get a Demo
           </Button>
           <Button
+            p={6}
             rightIcon={<ArrowForwardIcon />}
             variant="outline"
             colorScheme="blackAlpha"
-            
             borderRadius={50}
             fontSize="1rem"
             fontWeight="600"
