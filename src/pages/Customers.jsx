@@ -73,9 +73,9 @@ const Customers = () => {
      <div class='cust5-image' >   <img src="https://www.chargebee.com/static/resources/customers/crew.svg" alt="freshworks" width="90" style={{height:"40px"}} />  </div>
      <div class='cust5-image' >   <img src="https://www.chargebee.com/static/resources/customers/gigwell.png" width="150" alt="gigwell" /> </div>
       </div>
-      <div class="cust6" style={{display:"flex",justifyContent:"center"}} >
+      <div class="cust6" style={{display:"flex",justifyContent:"center",width:"755px",height:"415px",margin:"auto"}} >
       
-        <iframe width="760" height="455" src="https://www.youtube.com/embed/R9XgyoLQ9qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/R9XgyoLQ9qw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="cust7"  >
         {list.map((el)=>{
