@@ -2,10 +2,8 @@ import { Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react';
 import { Button } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react';
-
 import { Link } from 'react-router-dom';
 import  './Customers.css';
-
 const Customers = () => {
   const[list,setList] = useState([]);
   const getData = async()=>{
@@ -20,13 +18,7 @@ const Customers = () => {
   return (
     <div style={{}} >
       
-<<<<<<< HEAD
       <div className="cust1">
-=======
-
-      <div class="cust1">
-
->>>>>>> 70aa2370e7c7bca89b71e6c0182c441945bfcd62
       <Heading>Chargebee powers <br/>
       </Heading>
       <Heading> subscriptions for</Heading>
@@ -37,36 +29,22 @@ const Customers = () => {
   <Button  color="blue.500" variant='ghost'  marginTop="50px" marginLeft="20px"  >Talk to us!</Button>
 
       </div>
-<<<<<<< HEAD
       <div className="cust2" >
         <div className="cust-left" > 
           <img className="study-com-logo"  src="https://webstatic.chargebee.com/assets/web/543/images/home/testimonial/cb-study.png" alt="study.com" />
           <p className='study-com-text'  >... Integration was easy and the <strong style={{fontStyle:"italic"}} >customer support provided was excellent. </strong> This is huge<br/>considering how deficient many players in the <br/> space are when... </p>
-=======
-
-      <div class="cust2" >
-        <div class="cust-left" > 
-          <img class="study-com-logo"  src="https://webstatic.chargebee.com/assets/web/543/images/home/testimonial/cb-study.png" alt="study.com" />
-          <p class='study-com-text'  >... Integration was easy and the <strong style={{fontStyle:"italic"}} >customer support provided was excellent. </strong> This is huge<br/>considering how deficient many players in the <br/> space are when... </p>
->>>>>>> 70aa2370e7c7bca89b71e6c0182c441945bfcd62
          <div  >
-
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/voitek.jpeg" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",}} />  <label> Voitek Sobieszczanski, Director of Finance &amp; Operations</label>
          </div>
           
         </div>
         <div>
-<<<<<<< HEAD
-      <Link to="/customers/readthestory" >  <img classNameName="white-board-image"  src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
-=======
-
-      <Link to="/customers/readthestory" >  <img class="white-board-image"  src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
->>>>>>> 70aa2370e7c7bca89b71e6c0182c441945bfcd62
+      <Link to="/customers/readthestory" >  <img className="white-board-image"  src="https://user-images.githubusercontent.com/107903370/207784031-af0dec8a-2de3-41ea-84e7-0302734fc81d.png" alt="whiteBoard" /> </Link>
         </div>
       </div>
       <div className="cust3"  >
      <div className='cust3-image' >   <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/freshworks-light-bg.png" alt="freshworks" width="140" style={{height:"30px"}} /> </div>
-       <div classNameName='cust3-image' > <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="freshworks" width="130"style={{height:"35px"}} /> </div>
+       <div className='cust3-image' > <img src="https://www.chargebee.com/static/resources/customers/calendly.png" alt="freshworks" width="130"style={{height:"35px"}} /> </div>
       <div className='cust3-image' >  <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/linuxacademy-logo.png" alt="freshworks" width="182" style={{height:"40px"}} /> </div>
      <div className='cust3-image' >   <img src="https://webstatic.chargebee.com/assets/web/543/images/customers/logos/fujitsu.png" alt="freshworks" width="90" style={{height:"40px"}} /> </div>
       </div>
@@ -81,7 +59,6 @@ const Customers = () => {
           <div className="freedom-text" >
           <Text fontSize='22px'> We didn't have another choice,  we  never had to choose between  Chargebee and another provider. Chargebee was the clear winner.</Text>
           </div>
-
           <div style={{display:"flex",margin:"0px",alignItems:"center"}} >
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/freedom-fred.png" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",margin:"20px"}} />  <label>Fred Stutzman, CEO, Freedom</label>
          </div>
@@ -106,7 +83,6 @@ const Customers = () => {
           return<div className='cust-list' key={el.id} style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",padding:"20px",borderRadius:"5px"}} >
             <img src={el.source} alt={el.id} style={{width:"180px",margin:"15px"}} />
             <div  style={{margin:"10px"}} > <Text fontSize='18px' color='navyBlue' as="lb" style={{}} > {el.text} </Text> </div>
-
           </div>
         })}
       </div>
