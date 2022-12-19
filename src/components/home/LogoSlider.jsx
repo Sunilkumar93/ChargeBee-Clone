@@ -25,6 +25,7 @@ const LogoSlider = () => {
         spaceBetween={1}
         autoplay={{
           delay: 1500,
+          disableOnInteraction: false,
         }}
         breakpoints={{
           360: {
