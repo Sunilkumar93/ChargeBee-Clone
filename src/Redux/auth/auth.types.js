@@ -1,1 +1,1 @@
-export const CURRENT_USER = "auth/current_user"
+export const CURRENT_USER = "auth/current_user";

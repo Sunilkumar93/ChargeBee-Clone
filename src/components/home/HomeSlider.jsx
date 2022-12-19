@@ -6,8 +6,17 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./HomeSlider.css";
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 const HomeSlider = () => {
   return (
@@ -51,6 +60,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -58,6 +68,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/jose-bolanos.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    José Bolaños
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CTO - Slidebean</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -84,13 +110,34 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
-               w="70%"
-               h="100%"
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/paul-kapsner.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                w="120px"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="2%"
+                textAlign="start"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Pual Kpsner
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="10px">
+                    Director, Finance & Operations - Superfoods{" "}
+                  </Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -117,6 +164,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -124,6 +172,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/rahul-gandhi.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Rahul Gandhi
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CEO - MakeSpace</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -150,13 +214,30 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
-               w="70%"
-               h="100%"
+                w="70%"
+                h="100%"
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/antoine-louiset.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Antoine Louiset,
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CTO - Yousign</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -183,6 +264,7 @@ const HomeSlider = () => {
               overflow="hidden"
               borderRadius={90}
               bgGradient="linear(180deg,rgba(91,1,180,.08) 0,rgba(255,255,255,0) 100%),#fff"
+              position="relative"
             >
               <Image
                 w="70%"
@@ -190,6 +272,22 @@ const HomeSlider = () => {
                 src="https://webstatic.chargebee.com/assets/web/543/images/home/coc/customers/debbie-barrafato.png"
                 alt="image"
               />
+              <VStack
+                alignItems="start"
+                zIndex={9}
+                position="absolute"
+                top="30%"
+                right="5%"
+              >
+                <Box>
+                  <Text fontSize="14px" fontWeight={600}>
+                    Debbie Barrafato,
+                  </Text>
+                </Box>
+                <Box>
+                  <Text fontSize="12px">CFO - Rise Vision</Text>
+                </Box>
+              </VStack>
             </Box>
           </Flex>
         </SwiperSlide>
@@ -239,7 +337,7 @@ const HomeSlider = () => {
             color="black"
             _hover={{ gap: "3px" }}
           >
-            Signup for free
+            <Link to="/signup"> Signup for free</Link>
           </Button>
         </Flex>
       </Box>

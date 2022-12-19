@@ -1,20 +1,24 @@
+
 import { Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react';
 import { Button } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import  './Customers.css';
+import  './Customers.
+
+
 const Customers = () => {
-  const[list,setList] = useState([]);
-  const getData = async()=>{
-    let base = await fetch(`https://chargebee-customers-database.vercel.app/posts`);
+  const [list, setList] = useState([]);
+  const getData = async () => {
+    let base = await fetch(
+      `https://chargebee-customers-database.vercel.app/posts`
+    );
     let base2 = await base.json();
-    setList(base2)
-    console.log(base2)
-  }
-  useEffect(()=>{
-    getData()
-  },[])
+    setList(base2);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div style={{}} >
       
@@ -63,8 +67,9 @@ const Customers = () => {
          <img src="https://webstatic.chargebee.com/assets/web/543/images/case-study/freedom-fred.png" alt="Voitek" style={{width:"50px",borderRadius:"50%",height:"50px",margin:"20px"}} />  <label>Fred Stutzman, CEO, Freedom</label>
          </div>
 
+
           </div>
-         </div>
+        </div>
       </div>
 
       <div className="cust5"  >
@@ -87,7 +92,7 @@ const Customers = () => {
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Customers
+export default Customers;
