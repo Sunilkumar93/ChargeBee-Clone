@@ -13,41 +13,37 @@ import {
 import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import app from "../firebase";
 import { useDispatch } from "react-redux";
-
-import { login } from "../Redux/auth/auth.action";
+import { login } from "../Redux/LoginRedux/Login.Actions";
 
 const Login = () => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth(app);
   const navigate = useNavigate();
 
-  const loginFirebase = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user.uid);
-
-        alert("user signed in Successfully");
-        dispatch(login(user.uid));
-
-        navigate("/");
-
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        // const errorMessage = error.message;
-        alert(errorCode);
-        navigate("/signup");
-      });
+    const payload = {
+      email,
+      password,
+    };
+    dispatch(login({ payload })).then((res) => {
+      console.log(res);
+      if (res.msg === "user not exist") {
+        alert("user not exist");
+        return navigate("/signup");
+      } else if (res.msg === "wrong credential") {
+        alert("please enter correct detail");
+      } else if (res.msg === "login success" && res.token) {
+        alert("login Successfully");
+        return navigate("/");
+      } else if (res.msg === "user not found") {
+        alert("user not exist");
+        return navigate("/signup");
+      }
+    });
   };
 
   const [show, setShow] = React.useState(false);
@@ -107,7 +103,7 @@ const Login = () => {
 
         <Box m="40px 40px 40px 20px" className="login_right">
           <Text>Sign in to Chargebee!</Text>
-          <form onSubmit={loginFirebase}>
+          <form onSubmit={handleLogin}>
             <Input
               onChange={(e) => setEmail(e.target.value)}
               placeholder="name@company.com"

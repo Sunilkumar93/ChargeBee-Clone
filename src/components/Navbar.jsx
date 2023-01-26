@@ -21,40 +21,36 @@ import {
 import React from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import "./Navbar.css";
-import { useSelector, useDispatch } from "react-redux";
-import { getAuth, signOut } from "firebase/auth";
-import app from "../firebase";
-import { login } from "../Redux/auth/auth.action";
+// import { useSelector, useDispatch } from "react-redux";
 import Product from "./Product/Product";
 import Solutions from "./Solutaions/Solutions";
 import Resources from "./Resources/Resources";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { logout } from "../Redux/LoginRedux/Login.Actions";
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const auth = getAuth(app);
-  const user = useSelector((store) => store.user);
-  const dispatch = useDispatch();
+  const { isAuth } = useSelector((state) => state.login);
+  const data = useSelector((state) => console.log(state.login));
   const navigate = useNavigate();
+  // console.log(data);
+  // console.log(isAuth);
+  const dispatch = useDispatch();
 
   const handleClick = (newSize) => {
     setSize(newSize);
     onOpen();
   };
 
-  const handleAuthentication = () => {
-    if (user) {
-      signOut(auth)
-        .then(() => {
-          alert("Sign-out successfully");
-          dispatch(login(null));
-          navigate("/");
-        })
-        .catch((error) => {
-          alert(error);
-        });
-    }
+  useEffect(() => {}, [isAuth, dispatch]);
+
+  const handleLogout = () => {
+    dispatch(logout()).then(() => {
+      alert("logged out successfully");
+      return navigate("/login");
+    });
   };
 
   return (
@@ -120,11 +116,11 @@ const Navbar = () => {
         <Box display="flex" alignItems="center" gap="5">
           <Hide below="md">
             <span>English</span>
-
-            {/* <LockIcon  style={{margin:"auto 5px",color:"#ff7846"}} />Login */}
-            <Link to={!user && "/login"} onClick={handleAuthentication}>
-              {user ? (
-                <Box>
+            {/* <LockIcon style={{ margin: "auto 5px", color: "#ff7846" }} />
+            Login */}
+            <Link to={!isAuth && "/login"}>
+              {isAuth ? (
+                <Box onClick={handleLogout}>
                   <UnlockIcon
                     style={{ margin: "auto 5px", color: "#ff7846" }}
                   />
@@ -137,7 +133,6 @@ const Navbar = () => {
                 </Box>
               )}
             </Link>
-
             <Link to="/demo">
               <button
                 className="o"
@@ -206,13 +201,13 @@ const Navbar = () => {
                       </p>
                     </Link>
 
-                    <Link to={!user && "/login"} onClick={handleAuthentication}>
-                      {user ? (
+                    <Link to={!isAuth && "/login"}>
+                      {isAuth ? (
                         <Box onClick={onClose} className="side">
                           <UnlockIcon
                             style={{ margin: "auto 5px", color: "#ff7846" }}
                           />
-                          Logout
+                          <Box onClick={handleLogout}>Logout</Box>
                         </Box>
                       ) : (
                         <Box onClick={onClose} className="side">
@@ -223,7 +218,11 @@ const Navbar = () => {
                         </Box>
                       )}
                     </Link>
-                    {/* <Link to="/login"  onClick={onClose}  ><p onClick={onClose} className='side'>Login</p></Link> */}
+                    {/* <Link to="/login" onClick={onClose}>
+                      <p onClick={onClose} className="side">
+                        Login
+                      </p>
+                    </Link> */}
                   </Box>
                 </DrawerBody>
               </DrawerContent>
