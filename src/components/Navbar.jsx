@@ -33,7 +33,6 @@ const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuth } = useSelector((state) => state.login);
-  const data = useSelector((state) => console.log(state.login));
   const navigate = useNavigate();
   // console.log(data);
   // console.log(isAuth);
