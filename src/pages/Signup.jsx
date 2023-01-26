@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Flex,
   Grid,
@@ -12,6 +14,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../Redux/SignupRedux/Signup.Actions";
+import { useToast } from "@chakra-ui/react";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +23,7 @@ const Signup = () => {
   console.log(email, password);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -31,10 +35,28 @@ const Signup = () => {
     dispatch(signup({ payload })).then((res) => {
       console.log(res);
       if (res === "user exist please login") {
-        alert("user Exist");
+        // alert("user Exist");
+        toast({
+          title: "Account Exist",
+          description: "Please Login In",
+          status: "info",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
+
         return navigate("/login");
       } else if (res === "user registered") {
-        alert("user signed up successfully");
+        // alert("user signed up successfully");
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
+
         return navigate("/login");
       }
 

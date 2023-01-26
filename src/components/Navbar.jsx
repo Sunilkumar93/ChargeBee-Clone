@@ -28,11 +28,14 @@ import Resources from "./Resources/Resources";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { logout } from "../Redux/LoginRedux/Login.Actions";
+import { useToast } from "@chakra-ui/react";
 
 const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuth } = useSelector((state) => state.login);
+  const toast = useToast();
+
   const navigate = useNavigate();
   // console.log(data);
   // console.log(isAuth);
@@ -47,7 +50,15 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logout()).then(() => {
-      alert("logged out successfully");
+      // alert("logged out successfully");
+      toast({
+        title: "User Logged out .",
+        description: "Visit again",
+        status: "success",
+        duration: 4000,
+        position: "top-right",
+        isClosable: true,
+      });
       return navigate("/login");
     });
   };

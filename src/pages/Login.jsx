@@ -9,6 +9,7 @@ import {
   InputRightElement,
   Show,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -17,6 +18,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../Redux/LoginRedux/Login.Actions";
 
 const Login = () => {
+  const toast = useToast();
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -32,15 +34,48 @@ const Login = () => {
     dispatch(login({ payload })).then((res) => {
       console.log(res);
       if (res.msg === "user not exist") {
-        alert("user not exist");
+        // alert("user not exist");
+        toast({
+          title: "Account Not Exist",
+          description: "Please SignUp First",
+          status: "info",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
         return navigate("/signup");
       } else if (res.msg === "wrong credential") {
-        alert("please enter correct detail");
+        // alert("please enter correct detail");
+        toast({
+          title: "Wrong Credentials",
+          description: "Please enter correct detail",
+          status: "warning",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
       } else if (res.msg === "login success" && res.token) {
-        alert("login Successfully");
+        // alert("login Successfully");
+        toast({
+          title: "User Logged in .",
+          description: "Welcome to ChargeBee",
+          status: "success",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
+
         return navigate("/");
       } else if (res.msg === "user not found") {
-        alert("user not exist");
+        // alert("user not exist");
+        toast({
+          title: "Account Not Exist",
+          description: "Please SignUp First",
+          status: "info",
+          duration: 4000,
+          position: "top-right",
+          isClosable: true,
+        });
         return navigate("/signup");
       }
     });
