@@ -9,33 +9,38 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import app from "../firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signup } from "../Redux/SignupRedux/Signup.Actions";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const auth = getAuth(app);
+  // const signupStatus = useSelector((store) => store.signup);
+  console.log(email, password);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const signUpFirebase = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        alert("signup successfully ");
-        navigate("/login");
+    const payload = {
+      email,
+      password,
+    };
+    console.log(payload);
+    dispatch(signup({ payload })).then((res) => {
+      console.log(res);
+      if (res === "user exist please login") {
+        alert("user Exist");
+        return navigate("/login");
+      } else if (res === "user registered") {
+        alert("user signed up successfully");
+        return navigate("/login");
+      }
 
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        // const errorMessage = error.message;
-        alert(errorCode);
-      });
+      // alert("succesfull");
+      // return navigate("/login");
+    });
   };
 
   return (
@@ -94,7 +99,7 @@ const Signup = () => {
             <legend style={{ fontSize: "24px" }}>
               Create Your Sandbox Account
             </legend>
-            <form onSubmit={signUpFirebase}>
+            <form onSubmit={handleSignup}>
               <Box h="100%">
                 <label style={{ fontSize: "20px" }}> Work email </label>
                 <Input

@@ -1,9 +1,23 @@
-import { legacy_createStore, compose, applyMiddleware } from "redux";
+import {
+  legacy_createStore,
+  compose,
+  applyMiddleware,
+  combineReducers,
+} from "redux";
 import thunk from "redux-thunk";
-import { authReducer } from "./auth/auth.reducer";
-const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import LoginReducer from "./LoginRedux/Login.Reducer";
+import signupReducer from "./SignupRedux/Signup.Reducer";
 
-export const store = legacy_createStore(
-  authReducer,
-  composer(applyMiddleware(thunk))
+const rootReducer = combineReducers({
+  signup: signupReducer,
+  login: LoginReducer,
+});
+
+const composerEnhancer = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+
+const store = legacy_createStore(
+  rootReducer,
+  composerEnhancer(applyMiddleware(thunk))
 );
+
+export { store };
