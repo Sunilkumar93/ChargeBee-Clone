@@ -1,6 +1,4 @@
 import {
-  Alert,
-  AlertIcon,
   Box,
   Flex,
   Grid,
@@ -12,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signup } from "../Redux/SignupRedux/Signup.Actions";
 import { useToast } from "@chakra-ui/react";
 
