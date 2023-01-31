@@ -33,12 +33,9 @@ import { useToast } from "@chakra-ui/react";
 const Navbar = () => {
   const [size, setSize] = React.useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuth } = useSelector((state) => state.login);
+  const { isAuth,email } = useSelector((state) => state.login);
   const toast = useToast();
-
   const navigate = useNavigate();
-  // console.log(data);
-  // console.log(isAuth);
   const dispatch = useDispatch();
 
   const handleClick = (newSize) => {
@@ -46,11 +43,13 @@ const Navbar = () => {
     onOpen();
   };
 
-  useEffect(() => {}, [isAuth, dispatch]);
+  useEffect(() => {
+  
+  }, [isAuth, dispatch,email]);
+  console.log(email);
 
   const handleLogout = () => {
     dispatch(logout()).then(() => {
-      // alert("logged out successfully");
       toast({
         title: "User Logged out .",
         description: "Visit again",
@@ -61,6 +60,7 @@ const Navbar = () => {
       });
       return navigate("/login");
     });
+    
   };
 
   return (
@@ -126,6 +126,7 @@ const Navbar = () => {
         <Box display="flex" alignItems="center" gap="5">
           <Hide below="md">
             <span>English</span>
+           
             {/* <LockIcon style={{ margin: "auto 5px", color: "#ff7846" }} />
             Login */}
             <Link to={!isAuth && "/login"}>
@@ -135,6 +136,7 @@ const Navbar = () => {
                     style={{ margin: "auto 5px", color: "#ff7846" }}
                   />
                   Logout
+                  <p>{email}</p>
                 </Box>
               ) : (
                 <Box>
@@ -170,6 +172,7 @@ const Navbar = () => {
                 <DrawerHeader></DrawerHeader>
                 <DrawerBody>
                   <Box className="navbar_right" flexGrow="3">
+                     <p className="side">Hello {email}</p>
                     <Link to="/" onClick={onClose}>
                       <p onClick={onClose} className="side">
                         Home
@@ -211,13 +214,18 @@ const Navbar = () => {
                       </p>
                     </Link>
 
+                    
+
                     <Link to={!isAuth && "/login"}>
                       {isAuth ? (
                         <Box onClick={onClose} className="side">
-                          <UnlockIcon
+                          
+                          <Box onClick={handleLogout}>
+                            <UnlockIcon
                             style={{ margin: "auto 5px", color: "#ff7846" }}
-                          />
-                          <Box onClick={handleLogout}>Logout</Box>
+                          />Logout
+
+                          </Box>
                         </Box>
                       ) : (
                         <Box onClick={onClose} className="side">

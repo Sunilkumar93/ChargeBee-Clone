@@ -6,8 +6,10 @@ import {
 } from "./Login.ActionTypes";
 
 const token = localStorage.getItem("token") || "";
+const email = localStorage.getItem("email") || "";
 
 const initState = {
+  email: email,
   token: token,
   isAuth: token ? true : false,
   isError: false,
@@ -20,13 +22,15 @@ const LoginReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case LOGIN_SUCCESS: {
       if (payload.token) {
+        localStorage.setItem("email", payload.email);
         localStorage.setItem("token", payload.token);
       }
       // isAuth = localStorage.getItem("isAuth");
       return {
         ...state,
         isAuth: payload.token ? true : false,
-        token: payload,
+        email: payload.email,
+        token: payload.token,
       };
     }
     case LOGIN_ERROR: {
@@ -37,12 +41,14 @@ const LoginReducer = (state = initState, { type, payload }) => {
       };
     }
     case LOGOUT: {
+      localStorage.removeItem("email");
       localStorage.removeItem("token");
       // localStorage.setItem("isAuth", false);
 
       return {
         ...state,
         isAuth: false,
+        email: "",
         token: "",
         isError: false,
         message: null,
